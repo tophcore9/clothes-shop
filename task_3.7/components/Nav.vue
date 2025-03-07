@@ -4,7 +4,7 @@
             <div class="nav-content">
                 <div class="nav-section">
                     <NuxtLink class="nav-link" to="/">
-                        <Icon icon-url="_nuxt/assets/img/logo.png" :icon-width="'auto'" :icon-height="'auto'"/>
+                        <Icon icon-url="_nuxt/assets/img/logo-dark.png" :icon-width="'auto'" :icon-height="'auto'"/>
                     </NuxtLink>
                     <NuxtLink class="nav-link" to="/">Home</NuxtLink>
                     <NuxtLink class="nav-link" to="/products">Products</NuxtLink>

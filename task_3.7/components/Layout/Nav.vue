@@ -4,15 +4,15 @@
             <div class="nav-content">
                 <div class="nav-section">
                     <NuxtLink class="nav-link" to="/">
-                        <Icon icon-url="_nuxt/assets/img/logo-dark.png" :icon-width="'auto'" :icon-height="'auto'"/>
+                        <Icon icon-url="_nuxt/assets/images/logo-dark.png" :icon-width="'auto'" :icon-height="'auto'"/>
                     </NuxtLink>
                     <NuxtLink class="nav-link" to="/">Home</NuxtLink>
                     <NuxtLink class="nav-link" to="/products">Products</NuxtLink>
                     <NuxtLink class="nav-link" to="/contacts">Contacts</NuxtLink>
                 </div>
                 <div class="nav-section">
-                    <NuxtLink class="nav-link" to="/cart"><Icon icon-url="_nuxt/assets/img/cart.svg"/></NuxtLink>
-                    <NuxtLink class="nav-link" to="/profile"><Icon icon-url="_nuxt/assets/img/profile.svg"/></NuxtLink>
+                    <NuxtLink class="nav-link" to="/cart"><Icon icon-url="_nuxt/assets/images/cart.svg"/></NuxtLink>
+                    <NuxtLink class="nav-link" to="/profile"><Icon icon-url="_nuxt/assets/images/profile.svg"/></NuxtLink>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import Icon from '../components/Icon.vue';
+import Icon from '../Icon.vue';
 
 export default defineComponent({
     name: "Nav",

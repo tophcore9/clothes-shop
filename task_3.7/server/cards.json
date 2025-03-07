@@ -1,0 +1,92 @@
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "title": "Smartphone X200",
+    "images": ["https://example.com/images/x200_1.jpg", "https://example.com/images/x200_2.jpg"],
+    "price": 599.99,
+    "discount": 10,
+    "description": "A high-performance smartphone with a stunning display and long battery life.",
+    "category": "Electronics"
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "title": "Wireless Headphones Pro",
+    "images": ["https://example.com/images/headphones_1.jpg", "https://example.com/images/headphones_2.jpg"],
+    "price": 199.99,
+    "discount": 15,
+    "description": "Noise-cancelling wireless headphones with premium sound quality.",
+    "category": "Audio"
+  },
+  {
+    "id": "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+    "title": "Smart Watch Series 5",
+    "images": ["https://example.com/images/watch_1.jpg", "https://example.com/images/watch_2.jpg"],
+    "price": 299.99,
+    "discount": 20,
+    "description": "A smartwatch with health tracking, GPS, and long battery life.",
+    "category": "Wearables"
+  },
+  {
+    "id": "6ba7b812-9dad-11d1-80b4-00c04fd430c8",
+    "title": "4K Ultra HD Smart TV",
+    "images": ["https://example.com/images/tv_1.jpg", "https://example.com/images/tv_2.jpg"],
+    "price": 899.99,
+    "discount": 5,
+    "description": "A 55-inch 4K Ultra HD Smart TV with HDR and built-in streaming apps.",
+    "category": "Home Entertainment"
+  },
+  {
+    "id": "6ba7b813-9dad-11d1-80b4-00c04fd430c8",
+    "title": "Gaming Laptop ZX500",
+    "images": ["https://example.com/images/laptop_1.jpg", "https://example.com/images/laptop_2.jpg"],
+    "price": 1499.99,
+    "discount": 25,
+    "description": "A powerful gaming laptop with a high-refresh-rate display and RGB keyboard.",
+    "category": "Computers"
+  },
+  {
+    "id": "6ba7b814-9dad-11d1-80b4-00c04fd430c8",
+    "title": "Bluetooth Speaker Mini",
+    "images": ["https://example.com/images/speaker_1.jpg", "https://example.com/images/speaker_2.jpg"],
+    "price": 49.99,
+    "discount": 10,
+    "description": "A portable Bluetooth speaker with rich sound and long battery life.",
+    "category": "Audio"
+  },
+  {
+    "id": "6ba7b815-9dad-11d1-80b4-00c04fd430c8",
+    "title": "Electric Kettle Pro",
+    "images": ["https://example.com/images/kettle_1.jpg", "https://example.com/images/kettle_2.jpg"],
+    "price": 39.99,
+    "discount": 0,
+    "description": "A fast-boiling electric kettle with temperature control and safety features.",
+    "category": "Home Appliances"
+  },
+  {
+    "id": "6ba7b816-9dad-11d1-80b4-00c04fd430c8",
+    "title": "Fitness Tracker Band",
+    "images": ["https://example.com/images/band_1.jpg", "https://example.com/images/band_2.jpg"],
+    "price": 79.99,
+    "discount": 10,
+    "description": "A fitness tracker band with heart rate monitoring and sleep tracking.",
+    "category": "Wearables"
+  },
+  {
+    "id": "6ba7b817-9dad-11d1-80b4-00c04fd430c8",
+    "title": "Wireless Mouse MX",
+    "images": ["https://example.com/images/mouse_1.jpg", "https://example.com/images/mouse_2.jpg"],
+    "price": 59.99,
+    "discount": 5,
+    "description": "A wireless mouse with ergonomic design and customizable buttons.",
+    "category": "Accessories"
+  },
+  {
+    "id": "6ba7b818-9dad-11d1-80b4-00c04fd430c8",
+    "title": "External SSD 1TB",
+    "images": ["https://example.com/images/ssd_1.jpg", "https://example.com/images/ssd_2.jpg"],
+    "price": 129.99,
+    "discount": 15,
+    "description": "A high-speed external SSD with 1TB storage capacity.",
+    "category": "Storage"
+  }
+]

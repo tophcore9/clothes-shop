@@ -4,21 +4,21 @@
             <div class="footer-content">
                 <div class="footer-content__left">
                     <div class="footer-content__left-top">
-                        <Icon icon-url="_nuxt/assets/img/logo-light.png" :icon-width="'138px'" :icon-height="'24px'"/>
+                        <Icon icon-url="_nuxt/assets/images/logo-light.png" :icon-width="'138px'" :icon-height="'24px'"/>
 
                         <div>We help you find your dream products</div>
 
                         <div class="site-links">
                             <div class="site-link">
-                                <Icon icon-url="_nuxt/assets/img/facebook-logo.svg" :icon-width="'20px'" :icon-height="'20px'"/>
+                                <Icon icon-url="_nuxt/assets/images/facebook-logo.svg" :icon-width="'20px'" :icon-height="'20px'"/>
                             </div>
 
                             <div class="site-link">
-                                <Icon icon-url="_nuxt/assets/img/instagram-logo.svg" :icon-width="'20px'" :icon-height="'20px'"/>
+                                <Icon icon-url="_nuxt/assets/images/instagram-logo.svg" :icon-width="'20px'" :icon-height="'20px'"/>
                             </div>
 
                             <div class="site-link">
-                                <Icon icon-url="_nuxt/assets/img/twitter-logo.svg" :icon-width="'20px'" :icon-height="'20px'"/>
+                                <Icon icon-url="_nuxt/assets/images/twitter-logo.svg" :icon-width="'20px'" :icon-height="'20px'"/>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import Icon from '../components/Icon.vue';
+import Icon from '../Icon.vue';
 
 export default defineComponent({
     name: "Footer",

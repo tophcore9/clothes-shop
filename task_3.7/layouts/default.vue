@@ -12,8 +12,8 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import Nav from '../components/Nav.vue';
-import Footer from '../components/Footer.vue';
+import Nav from '../components/Layout/Nav.vue';
+import Footer from '../components/Layout/Footer.vue';
 
 export default defineComponent({
     name: "default",
@@ -29,7 +29,6 @@ export default defineComponent({
 @import "../assets/css/fonts.css";
 
 :root {
-    --wrapper-width: 1440px;
     --primary-color: #FFFFFF;
     --secondary-color: #FFE699;
 }

@@ -3,13 +3,16 @@
         <div class="wrapper">
             <div class="nav-content">
                 <div class="nav-section">
-                    <img src="" alt="Logo">
-                    <NuxtLink to="/">Home</NuxtLink>
-                    <NuxtLink to="/products">Products</NuxtLink>
-                    <NuxtLink to="/contacts">Contacts</NuxtLink>
+                    <NuxtLink class="nav-link" to="/">
+                        <Icon icon-url="_nuxt/assets/img/logo.png" :icon-width="'auto'" :icon-height="'auto'"/>
+                    </NuxtLink>
+                    <NuxtLink class="nav-link" to="/">Home</NuxtLink>
+                    <NuxtLink class="nav-link" to="/products">Products</NuxtLink>
+                    <NuxtLink class="nav-link" to="/contacts">Contacts</NuxtLink>
                 </div>
                 <div class="nav-section">
-                    <NuxtLink to="/cart">Cart</NuxtLink>
+                    <NuxtLink class="nav-link" to="/cart"><Icon icon-url="_nuxt/assets/img/cart.svg"/></NuxtLink>
+                    <NuxtLink class="nav-link" to="/profile"><Icon icon-url="_nuxt/assets/img/profile.svg"/></NuxtLink>
                 </div>
             </div>
         </div>
@@ -17,10 +20,14 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+import {defineComponent} from 'vue';
+import Icon from '../components/Icon.vue';
 
 export default defineComponent({
-    name: "Nav"
+    name: "Nav",
+    components: {
+        Icon
+    }
 })
 </script>
 
@@ -43,5 +50,11 @@ export default defineComponent({
     display: flex;
     align-items: center;
     gap: 48px;
+}
+
+.nav-link {
+    color: #1E1E1E;
+    opacity: 0.8;
+    text-decoration: none;
 }
 </style>

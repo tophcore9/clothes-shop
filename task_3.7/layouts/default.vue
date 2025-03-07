@@ -25,16 +25,13 @@ export default defineComponent({
 </script>
 
 <style>
+@import "../assets/css/reset.css";
+@import "../assets/css/fonts.css";
+
 :root {
     --wrapper-width: 1440px;
     --primary-color: #FFFFFF;
     --secondary-color: #FFE699;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 #__nuxt {
@@ -50,6 +47,10 @@ body, html, .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .content {

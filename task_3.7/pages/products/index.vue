@@ -1,29 +1,22 @@
 <template>
-    <h1>Products</h1>
-    <div class="product-card" v-for="card in cardsStore.cards" :key="card.id">
-        <div>.</div>
-        <div>{{card.id}}</div>
-        <div>.</div>
-        <div>{{card.title}}</div>
-        <div>.</div>
-        <div>{{card.description}}</div>
-        <div>.</div>
-        <div>{{card.price}}</div>
-        <div>.</div>
-        <div>{{card.category}}</div>
-        <div>.</div>
-        <div>{{card.discount}}</div>
-        <div>.</div>
-        <div>{{card.images}}</div>
+    <div class="products">
+        <div class="filters">
+
+        </div>
+        <div class="cards">
+            <Card v-for="card in cardsStore.cards" :key="card.id" :card-item="card"/>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue'
 import {useCardsStore} from "~/stores/cardsStore";
+import Card from "~/components/Cards/Card.vue";
 
 export default defineComponent({
     name: "index",
+    components: {Card},
     data() {
         return {
             cardsStore: useCardsStore()
@@ -33,5 +26,18 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.products {
+    display: flex;
+}
+.cards {
+    width: 100%;
 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 31%));
+    gap: 32px;
+}
+.filters {
+    margin-right: 24px;
+    min-width: 300px;
+}
 </style>

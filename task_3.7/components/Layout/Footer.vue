@@ -69,7 +69,7 @@ export default defineComponent({
 
 <style scoped>
 .footer {
-    margin-top: 60px;
+    margin-top: 64px;
     padding: 48px 0;
 
     width: 100%;

@@ -1,92 +1,69 @@
 [
   {
-    "id": "550e8400-e29b-41d4-a716-446655440000",
-    "title": "Smartphone X200",
-    "images": ["https://example.com/images/x200_1.jpg", "https://example.com/images/x200_2.jpg"],
-    "price": 599.99,
-    "discount": 10,
-    "description": "A high-performance smartphone with a stunning display and long battery life.",
-    "category": "Electronics"
-  },
-  {
-    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
-    "title": "Wireless Headphones Pro",
-    "images": ["https://example.com/images/headphones_1.jpg", "https://example.com/images/headphones_2.jpg"],
-    "price": 199.99,
-    "discount": 15,
-    "description": "Noise-cancelling wireless headphones with premium sound quality.",
-    "category": "Audio"
-  },
-  {
-    "id": "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
-    "title": "Smart Watch Series 5",
-    "images": ["https://example.com/images/watch_1.jpg", "https://example.com/images/watch_2.jpg"],
-    "price": 299.99,
-    "discount": 20,
-    "description": "A smartwatch with health tracking, GPS, and long battery life.",
-    "category": "Wearables"
-  },
-  {
-    "id": "6ba7b812-9dad-11d1-80b4-00c04fd430c8",
-    "title": "4K Ultra HD Smart TV",
-    "images": ["https://example.com/images/tv_1.jpg", "https://example.com/images/tv_2.jpg"],
-    "price": 899.99,
-    "discount": 5,
-    "description": "A 55-inch 4K Ultra HD Smart TV with HDR and built-in streaming apps.",
-    "category": "Home Entertainment"
-  },
-  {
-    "id": "6ba7b813-9dad-11d1-80b4-00c04fd430c8",
-    "title": "Gaming Laptop ZX500",
-    "images": ["https://example.com/images/laptop_1.jpg", "https://example.com/images/laptop_2.jpg"],
-    "price": 1499.99,
-    "discount": 25,
-    "description": "A powerful gaming laptop with a high-refresh-rate display and RGB keyboard.",
-    "category": "Computers"
-  },
-  {
-    "id": "6ba7b814-9dad-11d1-80b4-00c04fd430c8",
-    "title": "Bluetooth Speaker Mini",
-    "images": ["https://example.com/images/speaker_1.jpg", "https://example.com/images/speaker_2.jpg"],
-    "price": 49.99,
-    "discount": 10,
-    "description": "A portable Bluetooth speaker with rich sound and long battery life.",
-    "category": "Audio"
-  },
-  {
-    "id": "6ba7b815-9dad-11d1-80b4-00c04fd430c8",
-    "title": "Electric Kettle Pro",
-    "images": ["https://example.com/images/kettle_1.jpg", "https://example.com/images/kettle_2.jpg"],
+    "id": "a1b2c3d4-5678-90ab-cdef-1234567890ab",
+    "title": "Elegant Wolf Backpack",
+    "images": [
+      "/assets/images/products/elegant-wolf-backpack/elegant-wolf-backpack-1.jpg",
+      "/assets/images/products/elegant-wolf-backpack/elegant-wolf-backpack-2.jpg",
+      "/assets/images/products/elegant-wolf-backpack/elegant-wolf-backpack-3.jpg",
+      "/assets/images/products/elegant-wolf-backpack/elegant-wolf-backpack-4.jpg",
+      "/assets/images/products/elegant-wolf-backpack/elegant-wolf-backpack-5.jpg"
+    ],
     "price": 39.99,
-    "discount": 0,
-    "description": "A fast-boiling electric kettle with temperature control and safety features.",
-    "category": "Home Appliances"
+    "discount": 20,
+    "description": "A durable and stylish backpack featuring a majestic wolf design.",
+    "category": "Bags"
   },
   {
-    "id": "6ba7b816-9dad-11d1-80b4-00c04fd430c8",
-    "title": "Fitness Tracker Band",
-    "images": ["https://example.com/images/band_1.jpg", "https://example.com/images/band_2.jpg"],
-    "price": 79.99,
-    "discount": 10,
-    "description": "A fitness tracker band with heart rate monitoring and sleep tracking.",
-    "category": "Wearables"
-  },
-  {
-    "id": "6ba7b817-9dad-11d1-80b4-00c04fd430c8",
-    "title": "Wireless Mouse MX",
-    "images": ["https://example.com/images/mouse_1.jpg", "https://example.com/images/mouse_2.jpg"],
-    "price": 59.99,
-    "discount": 5,
-    "description": "A wireless mouse with ergonomic design and customizable buttons.",
-    "category": "Accessories"
-  },
-  {
-    "id": "6ba7b818-9dad-11d1-80b4-00c04fd430c8",
-    "title": "External SSD 1TB",
-    "images": ["https://example.com/images/ssd_1.jpg", "https://example.com/images/ssd_2.jpg"],
-    "price": 129.99,
+    "id": "b2c3d4e5-6789-0abc-def1-234567890abc",
+    "title": "Mountain Adventure Mug",
+    "images": [
+      "../assets/images/products/mountain-adventure-mug/mountain-adventure-mug-1.jpeg",
+      "../assets/images/products/mountain-adventure-mug/mountain-adventure-mug-2.jpeg",
+      "../assets/images/products/mountain-adventure-mug/mountain-adventure-mug-3.jpeg"
+    ],
+    "price": 24.99,
     "discount": 15,
-    "description": "A high-speed external SSD with 1TB storage capacity.",
-    "category": "Storage"
+    "description": "A ceramic mug with a scenic mountain illustration, perfect for travelers.",
+    "category": "Kitchenware"
+  },
+  {
+    "id": "c3d4e5f6-7890-abcd-ef12-34567890abcd",
+    "title": "Starry Night Hoodie",
+    "images": [
+      "../assets/images/products/starry-night-hoodie/starry-night-hoodie-1.png",
+      "../assets/images/products/starry-night-hoodie/starry-night-hoodie-2.png"
+    ],
+    "price": 49.99,
+    "discount": 30,
+    "description": "A cozy hoodie with a beautiful starry night sky design.",
+    "category": "Clothing"
+  },
+  {
+    "id": "d4e5f6g7-890a-bcde-f123-4567890abcde",
+    "title": "Wild Nature Tote Bag",
+    "images": [
+      "../assets/images/products/wild-nature-tote-bag/wild-nature-tote-bag-1.png",
+      "../assets/images/products/wild-nature-tote-bag/wild-nature-tote-bag-2.png",
+      "../assets/images/products/wild-nature-tote-bag/wild-nature-tote-bag-3.png",
+      "../assets/images/products/wild-nature-tote-bag/wild-nature-tote-bag-4.png"
+    ],
+    "price": 19.99,
+    "discount": 10,
+    "description": "An eco-friendly tote bag featuring a detailed forest scene.",
+    "category": "Bags"
+  },
+  {
+    "id": "e5f6g7h8-90ab-cdef-1234-567890abcdef",
+    "title": "Cozy Bear Sweatshirt",
+    "images": [
+      "../assets/images/products/cozy-bear-sweatshirt/cozy-bear-sweatshirt-1.png",
+      "../assets/images/products/cozy-bear-sweatshirt/cozy-bear-sweatshirt-2.png",
+      "../assets/images/products/cozy-bear-sweatshirt/cozy-bear-sweatshirt-3.png"
+    ],
+    "price": 44.99,
+    "discount": 25,
+    "description": "A warm sweatshirt with an adorable bear illustration.",
+    "category": "Clothing"
   }
 ]

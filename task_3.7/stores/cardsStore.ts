@@ -3,7 +3,7 @@ import type {ICard} from "~/types/card";
 
 export const useCardsStore = defineStore("cards", {
     state: () => ({
-
+        cards: [] as ICard[]
     }),
     actions: {
 

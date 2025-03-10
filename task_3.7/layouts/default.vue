@@ -20,6 +20,14 @@ export default defineComponent({
     components: {
         Footer,
         Nav
+    },
+    data() {
+        return {
+            cardsStore: useCardsStore()
+        }
+    },
+    async mounted() {
+        this.cardsStore.cards = await $fetch("/api/cards");
     }
 })
 </script>

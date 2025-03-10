@@ -3,13 +3,14 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+import {defineComponent} from 'vue';
+import {useCardsStore} from "~/stores/cardsStore";
 
 export default defineComponent({
     name: "index",
     data() {
         return {
-
+            cardsStore: useCardsStore()
         }
     },
 })

@@ -47,7 +47,7 @@ export default defineComponent({
 
 body, html, .container {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
 }
 
 .container {
@@ -63,7 +63,7 @@ body, html, .container {
 .content {
     padding: 32px 0;
 
-    height: 100%;
+    min-height: 100vh;
 }
 
 .wrapper {

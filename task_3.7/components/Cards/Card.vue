@@ -69,7 +69,6 @@ export default defineComponent({
     height: 100%;
 
     border-radius: 12px;
-    background-color: red;
 }
 .add-to-cart__button {
     width: 48px;
@@ -81,7 +80,7 @@ export default defineComponent({
 
     border: none;
     border-radius: 12px;
-    background: rgba(255, 230, 153, 1) url("assets/images/cart-add.svg") no-repeat center;
+    background: rgba(255, 230, 153, 1) url("/assets/images/cart-add.svg") no-repeat center;
 }
 .card-body {
 

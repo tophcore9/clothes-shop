@@ -4,15 +4,15 @@
             <div class="nav-content">
                 <div class="nav-section">
                     <NuxtLink class="nav-link" to="/">
-                        <Icon icon-url="_nuxt/assets/images/logo-dark.png" :icon-width="'auto'" :icon-height="'auto'"/>
+                        <Icon icon-url="/assets/images/logo-dark.png" :icon-width="'auto'" :icon-height="'auto'"/>
                     </NuxtLink>
                     <NuxtLink class="nav-link" to="/">Home</NuxtLink>
                     <NuxtLink class="nav-link" to="/products">Products</NuxtLink>
                     <NuxtLink class="nav-link" to="/contacts">Contacts</NuxtLink>
                 </div>
                 <div class="nav-section">
-                    <NuxtLink class="nav-link" to="/cart"><Icon icon-url="_nuxt/assets/images/cart.svg"/></NuxtLink>
-                    <NuxtLink class="nav-link" to="/profile"><Icon icon-url="_nuxt/assets/images/profile.svg"/></NuxtLink>
+                    <NuxtLink class="nav-link" to="/cart"><Icon icon-url="/assets/images/cart.svg"/></NuxtLink>
+                    <NuxtLink class="nav-link" to="/profile"><Icon icon-url="/assets/images/profile.svg"/></NuxtLink>
                 </div>
             </div>
         </div>

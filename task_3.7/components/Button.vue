@@ -1,7 +1,6 @@
 <template>
     <button class="button" :style="{height: height + 'px', width: width + 'px'}">
-        <div class="button-inner">
-            <slot></slot>
+        <div class="button-inner"> <slot></slot>
             <img class="button-img" :src="pictureUrl" alt="">
         </div>
     </button>
@@ -26,7 +25,7 @@ export default defineComponent({
             type: String,
             required: false,
             default: ''
-        }
+        },
     }
 })
 </script>
@@ -49,5 +48,7 @@ export default defineComponent({
     justify-content: center;
     align-items: center;
     gap: 5px;
+
+    position: relative;
 }
 </style>

@@ -5,7 +5,4 @@ export const useCardsStore = defineStore("cards", {
     state: () => ({
         cards: [] as ICard[]
     }),
-    actions: {
-
-    },
 })

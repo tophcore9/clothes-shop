@@ -11,7 +11,7 @@
                     <NuxtLink class="nav-link" to="/contacts">Contacts</NuxtLink>
                 </div>
                 <div class="nav-section">
-                    <NuxtLink class="nav-link" to="/cart"><Icon icon-url="/assets/images/cart.svg"/></NuxtLink>
+                    <NuxtLink class="nav-link" to="/cart"><Icon icon-url="/assets/images/cart.svg" :counter="useCartStore().cards.length"/></NuxtLink>
                     <NuxtLink class="nav-link" to="/profile"><Icon icon-url="/assets/images/profile.svg"/></NuxtLink>
                 </div>
             </div>

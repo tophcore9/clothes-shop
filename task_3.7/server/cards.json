@@ -1,6 +1,6 @@
 [
   {
-    "id": "a1b2c3d4-5678-90ab-cdef-1234567890ab",
+    "id": "1",
     "title": "Elegant Wolf Backpack",
     "images": [
       "/assets/images/products/elegant-wolf-backpack/elegant-wolf-backpack-1.jpg",
@@ -15,7 +15,7 @@
     "category": "Bags"
   },
   {
-    "id": "b2c3d4e5-6789-0abc-def1-234567890abc",
+    "id": "2",
     "title": "Mountain Adventure Mug",
     "images": [
       "/assets/images/products/mountain-adventure-mug/mountain-adventure-mug-1.jpeg",
@@ -28,7 +28,7 @@
     "category": "Kitchenware"
   },
   {
-    "id": "c3d4e5f6-7890-abcd-ef12-34567890abcd",
+    "id": "3",
     "title": "Starry Night Hoodie",
     "images": [
       "/assets/images/products/starry-night-hoodie/starry-night-hoodie-1.png",
@@ -40,7 +40,7 @@
     "category": "Clothing"
   },
   {
-    "id": "d4e5f6g7-890a-bcde-f123-4567890abcde",
+    "id": "4",
     "title": "Wild Nature Tote Bag",
     "images": [
       "/assets/images/products/wild-nature-tote-bag/wild-nature-tote-bag-1.png",
@@ -54,7 +54,7 @@
     "category": "Bags"
   },
   {
-    "id": "e5f6g7h8-90ab-cdef-1234-567890abcdef",
+    "id": "5",
     "title": "Cozy Bear Sweatshirt",
     "images": [
       "/assets/images/products/cozy-bear-sweatshirt/cozy-bear-sweatshirt-1.png",

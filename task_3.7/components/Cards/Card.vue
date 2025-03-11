@@ -1,5 +1,5 @@
 <template>
-    <div class="card" :style="{
+    <div @click.self="navigateTo(`/products/product-${cardItem.id}`)" class="card" :style="{
         maxWidth: maxWidth,
         maxHeight: maxHeight,
         minWidth: minWidth,
@@ -90,6 +90,9 @@ export default defineComponent({
     border-radius: 12px;
 
     position: relative;
+}
+.card:hover {
+    cursor: pointer;
 }
 .card-image {
     width: 100%;

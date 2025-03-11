@@ -1,10 +1,12 @@
 <template>
-    <div class="card">
+    <div class="card" :style="{
+        maxWidth: maxWidth,
+        maxHeight: maxHeight,
+        minWidth: minWidth,
+        minHeight: minHeight}">
         <div class="card-image-block">
             <img class="card-image" :src="cardItem.images[0]" alt="NO">
-            <button class="add-to-cart__button">
-
-            </button>
+            <Button class="add-to-cart__button" picture-url="/assets/images/cart-add.svg" @click="cartStore.addItem(cardItem)"></Button>
         </div>
 
         <div class="card-body">
@@ -23,16 +25,44 @@
 import {defineComponent} from 'vue';
 import Icon from '../Icon.vue';
 import type {ICard} from "~/types/card";
+import Button from '../Button.vue';
+import {useCartStore} from "~/stores/cartStore";
 
 export default defineComponent({
     name: "Card",
     components: {
-        Icon
+        Icon,
+        Button
+    },
+    data() {
+        return {
+            cartStore: useCartStore()
+        }
     },
     props: {
         cardItem: {
             type: Object as PropType<ICard>,
             required: true
+        },
+        maxWidth: {
+            type: String,
+            required: false,
+            default: '100%'
+        },
+        maxHeight: {
+            type: String,
+            required: false,
+            default: '450px'
+        },
+        minHeight: {
+            type: String,
+            required: false,
+            default: 'auto'
+        },
+        minWidth: {
+            type: String,
+            required: false,
+            default: 'auto'
         }
     },
     computed: {
@@ -51,15 +81,12 @@ export default defineComponent({
 .card {
     padding: 16px;
 
-    height: 450px;
-    width: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 
-    background: linear-gradient(180deg, rgba(245,245,245,1) 0%, rgba(234,234,234,1) 100%);
+    background: linear-gradient(180deg, rgba(245,245,245,1) 70%, rgba(234,234,234,1) 90%);
     border-radius: 12px;
 
     position: relative;
@@ -71,16 +98,9 @@ export default defineComponent({
     border-radius: 12px;
 }
 .add-to-cart__button {
-    width: 48px;
-    height: 48px;
-
     position: absolute;
     top: 8px;
     right: 8px;
-
-    border: none;
-    border-radius: 12px;
-    background: rgba(255, 230, 153, 1) url("/assets/images/cart-add.svg") no-repeat center;
 }
 .card-body {
 

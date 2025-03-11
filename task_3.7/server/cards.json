@@ -18,9 +18,9 @@
     "id": "b2c3d4e5-6789-0abc-def1-234567890abc",
     "title": "Mountain Adventure Mug",
     "images": [
-      "../assets/images/products/mountain-adventure-mug/mountain-adventure-mug-1.jpeg",
-      "../assets/images/products/mountain-adventure-mug/mountain-adventure-mug-2.jpeg",
-      "../assets/images/products/mountain-adventure-mug/mountain-adventure-mug-3.jpeg"
+      "/assets/images/products/mountain-adventure-mug/mountain-adventure-mug-1.jpeg",
+      "/assets/images/products/mountain-adventure-mug/mountain-adventure-mug-2.jpeg",
+      "/assets/images/products/mountain-adventure-mug/mountain-adventure-mug-3.jpeg"
     ],
     "price": 24.99,
     "discount": 15,
@@ -31,8 +31,8 @@
     "id": "c3d4e5f6-7890-abcd-ef12-34567890abcd",
     "title": "Starry Night Hoodie",
     "images": [
-      "../assets/images/products/starry-night-hoodie/starry-night-hoodie-1.png",
-      "../assets/images/products/starry-night-hoodie/starry-night-hoodie-2.png"
+      "/assets/images/products/starry-night-hoodie/starry-night-hoodie-1.png",
+      "/assets/images/products/starry-night-hoodie/starry-night-hoodie-2.png"
     ],
     "price": 49.99,
     "discount": 30,
@@ -43,10 +43,10 @@
     "id": "d4e5f6g7-890a-bcde-f123-4567890abcde",
     "title": "Wild Nature Tote Bag",
     "images": [
-      "../assets/images/products/wild-nature-tote-bag/wild-nature-tote-bag-1.png",
-      "../assets/images/products/wild-nature-tote-bag/wild-nature-tote-bag-2.png",
-      "../assets/images/products/wild-nature-tote-bag/wild-nature-tote-bag-3.png",
-      "../assets/images/products/wild-nature-tote-bag/wild-nature-tote-bag-4.png"
+      "/assets/images/products/wild-nature-tote-bag/wild-nature-tote-bag-1.png",
+      "/assets/images/products/wild-nature-tote-bag/wild-nature-tote-bag-2.png",
+      "/assets/images/products/wild-nature-tote-bag/wild-nature-tote-bag-3.png",
+      "/assets/images/products/wild-nature-tote-bag/wild-nature-tote-bag-4.png"
     ],
     "price": 19.99,
     "discount": 10,
@@ -57,9 +57,9 @@
     "id": "e5f6g7h8-90ab-cdef-1234-567890abcdef",
     "title": "Cozy Bear Sweatshirt",
     "images": [
-      "../assets/images/products/cozy-bear-sweatshirt/cozy-bear-sweatshirt-1.png",
-      "../assets/images/products/cozy-bear-sweatshirt/cozy-bear-sweatshirt-2.png",
-      "../assets/images/products/cozy-bear-sweatshirt/cozy-bear-sweatshirt-3.png"
+      "/assets/images/products/cozy-bear-sweatshirt/cozy-bear-sweatshirt-1.png",
+      "/assets/images/products/cozy-bear-sweatshirt/cozy-bear-sweatshirt-2.png",
+      "/assets/images/products/cozy-bear-sweatshirt/cozy-bear-sweatshirt-3.png"
     ],
     "price": 44.99,
     "discount": 25,

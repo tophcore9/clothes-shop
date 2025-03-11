@@ -4,7 +4,7 @@
 
         </div>
         <div class="cards">
-            <Card v-for="card in cardsStore.cards" :key="card.id" :card-item="card"/>
+            <Card v-for="card in cardsStore.cards" :key="card.id" :card-item="card" :min-height="'475px'"/>
         </div>
     </div>
 </template>

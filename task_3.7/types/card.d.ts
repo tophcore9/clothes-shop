@@ -1,5 +1,5 @@
 export interface ICard {
-    id: string; // uuid v2
+    id: string;
     title: string;
     images: string[];
     price: number;

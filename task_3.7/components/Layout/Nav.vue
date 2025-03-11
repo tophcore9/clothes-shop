@@ -1,6 +1,6 @@
 <template>
     <nav class="nav">
-        <div class="wrapper">
+        <div class="_wrapper">
             <div class="nav-content">
                 <div class="nav-section">
                     <NuxtLink class="nav-link" to="/">

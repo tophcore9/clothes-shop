@@ -1,8 +1,8 @@
 <template>
-    <div class="container">
+    <div class="_container">
         <Nav></Nav>
-        <div class="content">
-            <div class="wrapper">
+        <div class="_content">
+            <div class="_wrapper">
                 <slot></slot>
             </div>
         </div>
@@ -45,12 +45,12 @@ export default defineComponent({
     height: 100%;
 }
 
-body, html, .container {
+body, html, ._container {
     width: 100%;
     min-height: 100%;
 }
 
-.container {
+._container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -60,13 +60,13 @@ body, html, .container {
     font-weight: 500;
 }
 
-.content {
+._content {
     padding: 32px 0;
 
     min-height: 100vh;
 }
 
-.wrapper {
+._wrapper {
     height: 100%;
     max-width: 1440px;
     margin: 0 auto;

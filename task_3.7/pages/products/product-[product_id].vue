@@ -24,10 +24,17 @@
 
         <div class="content-block">
             <div class="content">
-
+                <h1 class="title">{{item.title}}</h1>
+                <h2 class="price">${{item.price/item.discount}}</h2>
+                <p class="discount">$<span>{{item.price}}</span>({{item.discount}}% off)</p>
+                <p>{{item.discount}}% off ends soon</p>
+                <Button class="add-to-cart__button" :picture-url="'/assets/images/cart-add.svg'">Add to cart</Button>
             </div>
-            <div class="description">
-
+            <div class="description-block">
+                <h2>Description</h2>
+                <div class="description-content">
+                    {{item.description}}
+                </div>
             </div>
         </div>
     </div>
@@ -37,9 +44,13 @@
 import {defineComponent} from 'vue'
 import type {ICard} from "~/types/card";
 import {useCardsStore} from "~/stores/cardsStore";
+import Button from '../../components/Button.vue';
 
 export default defineComponent({
     name: "[product_id]",
+    components: {
+        Button
+    },
     data() {
         return {
             item: {} as ICard,
@@ -80,12 +91,17 @@ export default defineComponent({
 
 <style scoped>
 .card {
+    width: 100%;
+    height: 100%;
+
     display: flex;
     justify-content: stretch;
+    gap: 32px;
 }
 .current-image__wrapper {
     margin-bottom: 24px;
-    height: 50%;
+    width: 100%;
+    height: 50vh;
     border-radius: 12px;
     overflow: hidden;
     position: relative;
@@ -121,6 +137,7 @@ export default defineComponent({
     object-fit: cover;
 }
 .images-block {
+    height: 100%;
     flex-basis: 50%;
 }
 .images {
@@ -142,6 +159,12 @@ export default defineComponent({
     cursor: pointer;
 }
 .content-block {
+    height: 100%;
     flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    border-bottom: 1px solid #DEDFE5;
 }
 </style>

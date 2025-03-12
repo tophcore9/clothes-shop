@@ -13,7 +13,7 @@
         <div class="count">
             <div class="count-controls">
                 <Button
-                    @click="cartStore.updateItem(item.id, EUpdateType.Decrement)"
+                    @click="cartStore.updateItem(item.id, EUpdateType.Decrement); isAlertShown = true"
                     :height="40"
                     :width="40"
                     picture-url="/assets/images/decrement.svg"
@@ -54,13 +54,13 @@
 import {defineComponent} from 'vue'
 import type {ICardInCart} from "~/types/card";
 import Button from '../Button.vue';
-import Modal from '../Modal.vue';
+import Modal from '../Modals/Modal.vue';
 
 export default defineComponent({
     name: "CartItem",
     components: {
         Button,
-        Modal
+        Modal,
     },
     data() {
         return {
@@ -78,45 +78,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.cart-item, .info, .count-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-}
-.cart-item {
-    padding-bottom: 40px;
-    border-bottom: 1px solid #DEDFE5;
-}
-.cart-item:first-child {
-    padding-top: 40px;
-    border-top: 1px solid #DEDFE5;
-}
-.info {
-    justify-content: flex-start;
-    flex-basis: 30%;
-}
-.count {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-.picture {
-    width: 130px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-.picture:hover {
-    cursor: pointer;
-}
-.count-input {
-    width: 80px;
-    height: 40px;
-
-    border: 1px solid #DEDFE5;
-    border-radius: 8px;
-
-    text-align: center;
-}
+@import "assets/css/components/cart_item.css";
 </style>

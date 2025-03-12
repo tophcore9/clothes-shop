@@ -1,5 +1,10 @@
 <template>
-    <button class="button" :style="{height: height + 'px', width: width + 'px'}">
+    <button
+        class="button"
+        :style="{height: height + 'px',
+        width: width + 'px',
+        backgroundColor: backgroundColor}"
+    >
         <div class="button-inner"> <slot></slot>
             <img class="button-img" :src="pictureUrl" alt="">
         </div>
@@ -26,6 +31,11 @@ export default defineComponent({
             required: false,
             default: ''
         },
+        backgroundColor: {
+            type: String,
+            required: false,
+            default: 'var(--secondary-color)'
+        }
     },
 })
 </script>
@@ -34,7 +44,6 @@ export default defineComponent({
 .button {
     padding: 0 16px;
     height: 50px;
-    background-color: var(--secondary-color);
 
     border: none;
     border-radius: 8px;

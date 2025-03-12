@@ -2,7 +2,7 @@
     <div class="cart-item">
         <div class="info">
             <div>
-                <img class="picture" :src="item.images[0]" alt="">
+                <img @click="navigateTo(`/products/product-${item.id}`)" class="picture" :src="item.images[0]" alt="">
             </div>
             <div>
                 <div>{{item.title}}</div>
@@ -34,11 +34,19 @@
         </div>
 
         <Button
-            @click="cartStore.removeItem(item.id)"
+            @click="isModalShown = !isModalShown"
             :height="40"
             :width="40"
             picture-url="/assets/images/remove.svg"
         ></Button>
+
+        <Modal
+            v-model:is-open="isModalShown"
+            @confirm="cartStore.removeItem(item.id)"
+            title="Confirm deletion"
+            confirm-button-text="Confirm deletion"
+            content="Are you sure want to delete this item?"
+        />
     </div>
 </template>
 
@@ -46,15 +54,18 @@
 import {defineComponent} from 'vue'
 import type {ICardInCart} from "~/types/card";
 import Button from '../Button.vue';
+import Modal from '../Modal.vue';
 
 export default defineComponent({
     name: "CartItem",
     components: {
-        Button
+        Button,
+        Modal
     },
     data() {
         return {
-            cartStore: useCartStore()
+            cartStore: useCartStore(),
+            isModalShown: false,
         }
     },
     props: {
@@ -95,6 +106,9 @@ export default defineComponent({
     height: 130px;
     object-fit: cover;
     border-radius: 12px;
+}
+.picture:hover {
+    cursor: pointer;
 }
 .count-input {
     width: 80px;

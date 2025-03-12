@@ -15,5 +15,15 @@ export const useCardsStore = defineStore("cards", {
 
             return {id: 'not found'} as ICard;
         }
+    },
+    getters: {
+        minPrice(): number {
+            const minPrice = this.cards.reduce((minPrice, currentPrice) => currentPrice.price < minPrice.price ? currentPrice : minPrice);
+            return minPrice.price;
+        },
+        maxPrice(): number {
+            const maxPrice = this.cards.reduce((maxPrice, currentPrice) => currentPrice.price > maxPrice.price ? currentPrice : maxPrice);
+            return maxPrice.price;
+        }
     }
 })

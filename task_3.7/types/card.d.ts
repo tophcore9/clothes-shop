@@ -7,3 +7,7 @@ export interface ICard {
     description: string;
     category: string;
 }
+
+export interface ICardInCart extends ICard {
+    count: number;
+}

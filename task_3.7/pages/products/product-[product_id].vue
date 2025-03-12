@@ -25,10 +25,17 @@
         <div class="content-block">
             <div class="content">
                 <h1 class="title">{{item.title}}</h1>
-                <h2 class="price">${{item.price/item.discount}}</h2>
-                <p class="discount">$<span>{{item.price}}</span>({{item.discount}}% off)</p>
+                <h2 class="price">${{priceWithDiscount}}</h2>
+                <p class="discount">$
+                    <span>{{item.price}}</span>
+                    <span>({{item.discount}}% off)</span>
+                </p>
                 <p>{{item.discount}}% off ends soon</p>
-                <Button class="add-to-cart__button" :picture-url="'/assets/images/cart-add.svg'">Add to cart</Button>
+                <Button
+                    @click="useCartStore().addItem(item)"
+                    class="add-to-cart__button"
+                    :picture-url="'/assets/images/cart-add.svg'"
+                >Add to cart</Button>
             </div>
             <div class="description-block">
                 <h2>Description</h2>
@@ -47,7 +54,7 @@ import {useCardsStore} from "~/stores/cardsStore";
 import Button from '../../components/Button.vue';
 
 export default defineComponent({
-    name: "[product_id]",
+    name: "product-[product_id]",
     components: {
         Button
     },
@@ -77,6 +84,17 @@ export default defineComponent({
         toggleCurrentImage(event: Event) {
             const eventTarget = event.target as HTMLImageElement;
             this.currentImageIndex = this.item.images.findIndex(image => image === new URL(eventTarget.currentSrc).pathname);
+        }
+    },
+    computed: {
+        priceWithDiscount(): number {
+            if (this.item.discount <= 0) {
+                return this.item.price;
+            }
+
+            const priceWithDiscount: number = this.item.price - this.item.price * this.item.discount / 100;
+
+            return Number(priceWithDiscount.toFixed(2));
         }
     },
     created() {

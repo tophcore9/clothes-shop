@@ -5,6 +5,8 @@
         </div>
         <div class="cards">
             <Card v-for="card in cardsStore.cards" :key="card.id" :card-item="card" :min-height="'475px'"/>
+            <div v-if="cardsStore.cards.length > 0">Min price: {{cardsStore.minPrice}}</div>
+            <div v-if="cardsStore.cards.length > 0">Max price: {{cardsStore.maxPrice}}</div>
         </div>
     </div>
 </template>

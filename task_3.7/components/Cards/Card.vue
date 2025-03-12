@@ -71,7 +71,9 @@ export default defineComponent({
                 return this.cardItem.price;
             }
 
-            return this.cardItem.price - this.cardItem.price * this.cardItem.discount / 100;
+            const priceWithDiscount: number = this.cardItem.price - this.cardItem.price * this.cardItem.discount / 100;
+
+            return Number(priceWithDiscount.toFixed(2));
         }
     }
 })

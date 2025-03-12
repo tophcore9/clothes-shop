@@ -13,7 +13,7 @@
         <div class="count">
             <div class="count-controls">
                 <Button
-                    @click="cartStore.updateItem(item.id, EUpdateType.Decrement); isAlertShown = true"
+                    @click="cartStore.updateItem(item.id, EUpdateType.Decrement)"
                     :height="40"
                     :width="40"
                     picture-url="/assets/images/decrement.svg"
@@ -27,9 +27,9 @@
                 ></Button>
             </div>
             <div>
-                <span>${{item.price}}</span>
+                <span class="discounted-price">${{(item.price - item.price * item.discount / 100).toFixed(2)}}</span>
                 &nbsp;
-                <span>${{item.price}}</span>
+                <span class="primal-price">${{item.price}}</span>
             </div>
         </div>
 

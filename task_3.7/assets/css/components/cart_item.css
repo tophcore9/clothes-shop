@@ -39,3 +39,10 @@
 
     text-align: center;
 }
+.primal-price {
+    color: rgba(30, 30, 30, 0.5);
+    text-decoration: line-through;
+}
+.discounted-price {
+    color: #EA9127;
+}

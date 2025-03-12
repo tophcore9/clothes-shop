@@ -11,7 +11,14 @@
     ],
     "price": 39.99,
     "discount": 20,
-    "description": "A durable and stylish backpack featuring a majestic wolf design.",
+    "description": "A durable and stylish backpack featuring a majestic wolf design. Made from high-quality, water-resistant materials, this backpack is perfect for outdoor adventures or daily use. It features multiple compartments, padded shoulder straps, and a sleek, modern design that combines functionality with aesthetic appeal.",
+    "features": [
+      "Water-resistant material",
+      "Multiple compartments for organization",
+      "Padded shoulder straps for comfort",
+      "Sleek and modern design",
+      "Durable zippers and stitching"
+    ],
     "category": "Bags"
   },
   {
@@ -24,7 +31,14 @@
     ],
     "price": 24.99,
     "discount": 15,
-    "description": "A ceramic mug with a scenic mountain illustration, perfect for travelers.",
+    "description": "A ceramic mug with a scenic mountain illustration, perfect for travelers and nature enthusiasts. This mug is microwave and dishwasher safe, making it both practical and beautiful. The high-quality print ensures the design stays vibrant even after repeated use, and the ergonomic handle provides a comfortable grip.",
+    "features": [
+      "Microwave and dishwasher safe",
+      "High-quality ceramic material",
+      "Scenic mountain illustration",
+      "Ergonomic handle for comfort",
+      "Vibrant and long-lasting print"
+    ],
     "category": "Kitchenware"
   },
   {
@@ -36,7 +50,14 @@
     ],
     "price": 49.99,
     "discount": 30,
-    "description": "A cozy hoodie with a beautiful starry night sky design.",
+    "description": "A cozy hoodie with a beautiful starry night sky design. Made from soft, breathable fabric, this hoodie is perfect for chilly evenings or casual outings. It features a front pocket, adjustable drawstring hood, and a relaxed fit for maximum comfort. The design is inspired by the famous Van Gogh painting, making it a unique and artistic addition to your wardrobe.",
+    "features": [
+      "Soft and breathable fabric",
+      "Front pocket for convenience",
+      "Adjustable drawstring hood",
+      "Relaxed fit for comfort",
+      "Inspired by Van Gogh's Starry Night"
+    ],
     "category": "Clothing"
   },
   {
@@ -50,7 +71,14 @@
     ],
     "price": 19.99,
     "discount": 10,
-    "description": "An eco-friendly tote bag featuring a detailed forest scene.",
+    "description": "An eco-friendly tote bag featuring a detailed forest scene. Made from recycled materials, this bag is both stylish and sustainable. It is spacious enough to carry all your essentials, with reinforced handles for durability. Perfect for grocery shopping, beach trips, or everyday use, this tote bag is a must-have for eco-conscious individuals.",
+    "features": [
+      "Made from recycled materials",
+      "Spacious and durable design",
+      "Reinforced handles for extra strength",
+      "Detailed forest scene print",
+      "Eco-friendly and sustainable"
+    ],
     "category": "Bags"
   },
   {
@@ -63,7 +91,14 @@
     ],
     "price": 44.99,
     "discount": 25,
-    "description": "A warm sweatshirt with an adorable bear illustration.",
+    "description": "A warm sweatshirt with an adorable bear illustration. Made from premium cotton blend fabric, this sweatshirt offers exceptional comfort and warmth. It features a relaxed fit, ribbed cuffs, and a soft inner lining, making it perfect for lounging or casual outings. The cute bear design adds a playful touch to your winter wardrobe.",
+    "features": [
+      "Premium cotton blend fabric",
+      "Relaxed fit for comfort",
+      "Ribbed cuffs and hem",
+      "Soft inner lining",
+      "Adorable bear illustration"
+    ],
     "category": "Clothing"
   }
 ]

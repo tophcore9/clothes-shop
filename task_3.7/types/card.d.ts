@@ -5,6 +5,7 @@ export interface ICard {
     price: number;
     discount: number;
     description: string;
+    features: string[];
     category: string;
 }
 

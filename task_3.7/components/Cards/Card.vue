@@ -1,12 +1,12 @@
 <template>
-    <div @click.self="navigateTo(`/products/product-${cardItem.id}`)" class="card" :style="{
+    <div @click="navigateTo(`/products/product-${cardItem.id}`)" class="card" :style="{
         maxWidth: maxWidth,
         maxHeight: maxHeight,
         minWidth: minWidth,
         minHeight: minHeight}">
         <div class="card-image-block">
             <img class="card-image" :src="cardItem.images[0]" alt="NO">
-            <Button class="add-to-cart__button" picture-url="/assets/images/cart-add.svg" @click="cartStore.addItem(cardItem)"></Button>
+            <Button class="add-to-cart__button" picture-url="/assets/images/cart-add.svg" @click.stop="cartStore.addItem(cardItem)"></Button>
         </div>
 
         <div class="card-body">

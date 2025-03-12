@@ -32,29 +32,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.nav {
-    height: 90px;
-    width: 100%;
-}
-
-.nav-content {
-    width: 100%;
-    min-height: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-section {
-    display: flex;
-    align-items: center;
-    gap: 48px;
-}
-
-.nav-link {
-    color: #1E1E1E;
-    opacity: 0.8;
-    text-decoration: none;
-}
+@import "assets/css/components/layout/nav.css";
 </style>

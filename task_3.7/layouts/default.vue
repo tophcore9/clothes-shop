@@ -45,10 +45,10 @@ export default defineComponent({
     --muted-text: #8F8F8F;
     --border-color: #DEDFE5;
     --border-radius: 12px;
+    --dark-bg-color: #2F1D1D;
 
     --footer-color: #D5D2D2;
     --footer-title-color: #FFFFFF;
-    --footer-bg-color: #2F1D1D;
 
     --success-color: #77DB61;
     --warning-color: #FCFF64;
@@ -77,7 +77,7 @@ body, html, ._container {
 }
 
 ._content {
-    padding: 2rem 0;
+    padding: 7rem 0;
 
     min-height: 100vh;
 }

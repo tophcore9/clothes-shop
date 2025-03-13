@@ -1,6 +1,14 @@
 .nav {
     height: 90px;
     width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+
+    transition: background-color 0.2s ease-in-out;
 }
 
 .nav-content {
@@ -27,4 +35,15 @@
 .nav-link-active {
     font-weight: 500;
     color: var(--highlight-bright-color);
+}
+
+.scrolled-nav {
+    background-color: var(--dark-bg-color);
+}
+
+.nav-section-dark>.nav-link {
+    color: var(--muted-text);
+}
+.nav-section-dark>.nav-link-active {
+    color: white;
 }

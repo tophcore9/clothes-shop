@@ -1,7 +1,20 @@
 <template>
     <div class="products">
         <div class="filters">
-                <h2 class="_title">Filters:</h2>
+            <h2 class="_title">Filters:</h2>
+
+            <DropDown title="Category" class="categories">
+                <button
+                    class="category"
+                    v-for="category in cardsStore.getAllCategories()"
+                >
+                    {{category}}
+                </button>
+            </DropDown>
+
+            <DropDown title="Price">
+
+            </DropDown>
         </div>
 
         <div>
@@ -24,18 +37,20 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+import {defineComponent} from 'vue';
 import {useCardsStore} from "~/stores/cardsStore";
 import Card from "~/components/Cards/Card.vue";
+import DropDown from '~/components/DropDown.vue';
 
 export default defineComponent({
     name: "index",
     components: {
         Card,
+        DropDown
     },
     data() {
         return {
-            cardsStore: useCardsStore()
+            cardsStore: useCardsStore(),
         }
     },
 })
@@ -55,11 +70,31 @@ export default defineComponent({
 .filters {
     margin-right: 1.5rem;
     min-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 .content {
     margin-bottom: 2rem;
 
     display: flex;
     justify-content: space-between;
+}
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.category {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+
+    display: block;
+    background-color: transparent;
+    border: none;
+}
+.category:last-child {
+    margin-bottom: 0;
 }
 </style>

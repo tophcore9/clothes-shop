@@ -14,6 +14,17 @@ export const useCardsStore = defineStore("cards", {
             }
 
             return {id: 'not found'} as ICard;
+        },
+        getAllCategories(): string[] {
+            let categories: string[] = [];
+
+            this.cards.forEach(card => {
+                if (!categories.includes(card.category)) {
+                    categories.push(card.category);
+                }
+            })
+
+            return categories;
         }
     },
     getters: {
@@ -24,6 +35,6 @@ export const useCardsStore = defineStore("cards", {
         maxPrice(): number {
             const maxPrice = this.cards.reduce((maxPrice, currentPrice) => currentPrice.price > maxPrice.price ? currentPrice : maxPrice);
             return maxPrice.price;
-        }
+        },
     }
 })

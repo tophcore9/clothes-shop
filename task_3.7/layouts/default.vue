@@ -90,12 +90,16 @@ body, html, ._container {
     max-width: 1440px;
 }
 
-._title {
+._title, ._title_2 {
     margin-right: 1rem;
 
     color: var(--text-color);
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+._title_2 {
+    font-size: 18px;
 }
 
 ._muted-text {

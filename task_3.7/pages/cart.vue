@@ -18,7 +18,7 @@
         </div>
 
         <div class="summary">
-            <h2 class="_title">Order summary</h2>
+            <h2 class="_title_2">Order summary</h2>
             <div class="summary-info__field">
                 <div>{{cartStore.cards.length}} items</div>
 

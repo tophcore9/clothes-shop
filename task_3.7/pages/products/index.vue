@@ -3,7 +3,7 @@
         <div class="filters">
             <h2 class="_title">Filters:</h2>
 
-            <DropDown title="Category" class="categories">
+            <DropDown title="Category" class="categories" :is-opened="true">
                 <button
                     class="category"
                     v-for="category in cardsStore.getAllCategories()"
@@ -12,7 +12,7 @@
                 </button>
             </DropDown>
 
-            <DropDown title="Price">
+            <DropDown title="Price" :is-opened="true">
 
             </DropDown>
         </div>
@@ -68,7 +68,7 @@ export default defineComponent({
     gap: 2rem;
 }
 .filters {
-    margin-right: 1.5rem;
+    margin-right: 2rem;
     min-width: 300px;
 
     display: flex;

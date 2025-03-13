@@ -27,7 +27,7 @@ export default defineComponent({
     },
     data() {
         return {
-            isExpanded: false
+            isExpanded: this.isOpened
         }
     },
     props: {
@@ -35,6 +35,11 @@ export default defineComponent({
             type: String,
             required: true
         },
+        isOpened: {
+            type: Boolean,
+            required: false,
+            default: false
+        }
     },
     methods: {
         toggleState() {

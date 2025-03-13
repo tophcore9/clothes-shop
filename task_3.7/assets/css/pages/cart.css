@@ -28,6 +28,7 @@
 .summary {
     padding: 1rem;
     max-height: 325px;
+    min-width: 380px;
 
     display: flex;
     flex-direction: column;

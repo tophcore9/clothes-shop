@@ -6,7 +6,18 @@
         minHeight: minHeight}">
         <div class="card-image-block">
             <img class="card-image" :src="cardItem.images[0]" alt="NO">
-            <Button class="add-to-cart__button" picture-url="/assets/images/cart-add.svg" @click.stop="cartStore.addItem(cardItem)"></Button>
+            <Button
+                v-if="cartStore.isItemInCart(cardItem.id)"
+                class="add-to-cart__button"
+                picture-url="/assets/images/remove-from-cart.png"
+                @click.stop="cartStore.removeItem(cardItem.id)"
+            ></Button>
+            <Button
+                v-else
+                class="add-to-cart__button"
+                picture-url="/assets/images/add-to-cart.png"
+                @click.stop="cartStore.addItem(cardItem)"
+            ></Button>
         </div>
 
         <div class="card-body">

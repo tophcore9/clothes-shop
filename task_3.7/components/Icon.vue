@@ -13,10 +13,12 @@ export default defineComponent({
     props: {
         iconWidth: {
             type: String,
+            required: false,
             default: '32'
         },
         iconHeight: {
             type: String,
+            required: false,
             default: '32'
         },
         iconUrl: {

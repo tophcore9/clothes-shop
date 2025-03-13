@@ -5,7 +5,8 @@
         width: width + 'px',
         backgroundColor: backgroundColor}"
     >
-        <div class="button-inner"> <slot></slot>
+        <div class="button-inner">
+            <slot></slot>
             <img class="button-img" :src="pictureUrl" alt="">
         </div>
     </button>
@@ -43,7 +44,7 @@ export default defineComponent({
 <style scoped>
 .button {
     padding: 0 1rem;
-    height: 50px;
+    height: 3rem;
 
     border: none;
     border-radius: 0.5rem;

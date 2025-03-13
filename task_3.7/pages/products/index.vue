@@ -34,10 +34,10 @@ export default defineComponent({
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(275px, 31%));
-    gap: 32px;
+    gap: 2rem;
 }
 .filters {
-    margin-right: 24px;
+    margin-right: 1.5rem;
     min-width: 300px;
 }
 </style>

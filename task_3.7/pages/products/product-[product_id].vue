@@ -32,9 +32,16 @@
                 </p>
                 <p class="discount-end">{{item.discount}}% off ends soon</p>
                 <Button
+                    v-if="useCartStore().isItemInCart(item.id)"
+                    @click="useCartStore().removeItem(item.id)"
+                    class="add-to-cart__button"
+                    :picture-url="'/assets/images/remove-from-cart.png'"
+                >Remove from cart</Button>
+                <Button
+                    v-else
                     @click="useCartStore().addItem(item)"
                     class="add-to-cart__button"
-                    :picture-url="'/assets/images/cart-add.svg'"
+                    :picture-url="'/assets/images/add-to-cart.png'"
                 >Add to cart</Button>
             </div>
 

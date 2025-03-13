@@ -38,6 +38,15 @@ export const useCartStore = defineStore("cart", {
                 console.error("Can't find the item with id " + id);
             }
         },
+        isItemInCart(id: string): boolean {
+            const index = this.cards.findIndex(card => card.id === id);
+
+            if (index >= 0) {
+                return true;
+            }
+
+            return false;
+        }
     },
     getters: {
         totalPrice(): number {

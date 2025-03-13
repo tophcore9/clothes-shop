@@ -45,6 +45,11 @@ export default defineComponent({
     --muted-text: #8F8F8F;
     --border-color: #DEDFE5;
     --border-radius: 12px;
+
+    --footer-color: #D5D2D2;
+    --footer-title-color: #FFFFFF;
+    --footer-bg-color: #2F1D1D;
+
 }
 
 #__nuxt {

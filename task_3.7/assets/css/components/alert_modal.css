@@ -1,13 +1,13 @@
 .alert-modal {
     width: 400px;
-    min-height: 60px;
+    min-height: 4rem;
     background-color: tomato;
 
     position: fixed;
-    bottom: 32px;
+    bottom: 2rem;
     left: calc(50% - 200px);
 
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     color: white;
 
     display: flex;

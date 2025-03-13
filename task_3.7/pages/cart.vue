@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <h1 class="title">Shopping cart</h1>
+        <h2 class="_title">Shopping cart</h2>
         <div>{{cartStore.cards.length}} items</div>
         <div class="vertical-line"></div>
         <div>${{cartStore.resultPrice}}</div>
@@ -18,7 +18,7 @@
         </div>
 
         <div class="summary">
-            <h1 class="title">Order summary</h1>
+            <h2 class="_title">Order summary</h2>
             <div class="summary-info__field">
                 <div>{{cartStore.cards.length}} items</div>
 

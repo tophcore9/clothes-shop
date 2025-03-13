@@ -39,6 +39,12 @@ export default defineComponent({
 :root {
     --primary-color: #FFFFFF;
     --secondary-color: #FFE699;
+    --text-color: #1E1E1E;
+    --highlight-color: #EA9127;
+    --highlight-bright-color: #FF730D;
+    --muted-text: #8F8F8F;
+    --border-color: #DEDFE5;
+    --border-radius: 12px;
 }
 
 #__nuxt {
@@ -57,19 +63,30 @@ body, html, ._container {
 
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    font-weight: 500;
-    color: #1E1E1E;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--text-color);
 }
 
 ._content {
-    padding: 32px 0;
+    padding: 2rem 0;
 
     min-height: 100vh;
 }
 
 ._wrapper {
+    margin: 0 auto;
+    padding: 2rem;
+
     height: 100%;
     max-width: 1440px;
-    margin: 0 auto;
+}
+
+._title {
+    margin-right: 1rem;
+
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 </style>

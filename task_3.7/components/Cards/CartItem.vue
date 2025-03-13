@@ -34,7 +34,7 @@
         </div>
 
         <Button
-            @click="isModalShown = !isModalShown"
+            @click="isModalShown = true"
             :height="40"
             :width="40"
             picture-url="/assets/images/remove.svg"

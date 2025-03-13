@@ -24,24 +24,32 @@
 
         <div class="content-block">
             <div class="content">
-                <h1 class="title">{{item.title}}</h1>
+                <h2 class="_title">{{item.title}}</h2>
                 <h2 class="price">${{priceWithDiscount}}</h2>
-                <p class="discount">$
-                    <span>{{item.price}}</span>
+                <p class="discount">
+                    <span class="discount-price">${{item.price}}</span>
                     <span>({{item.discount}}% off)</span>
                 </p>
-                <p>{{item.discount}}% off ends soon</p>
+                <p class="discount-end">{{item.discount}}% off ends soon</p>
                 <Button
                     @click="useCartStore().addItem(item)"
                     class="add-to-cart__button"
                     :picture-url="'/assets/images/cart-add.svg'"
                 >Add to cart</Button>
             </div>
+
             <div class="description-block">
-                <h2>Description</h2>
+                <h2 class="_title">Description</h2>
                 <div class="description-content">
                     {{item.description}}
                 </div>
+            </div>
+
+            <div class="features-block">
+                <h2 class="_title">Product features</h2>
+                <ul class="features-list">
+                    <li class="feature-item" v-for="feature in item.features">{{feature}}</li>
+                </ul>
             </div>
         </div>
     </div>

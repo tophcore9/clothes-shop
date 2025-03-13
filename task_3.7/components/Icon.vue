@@ -38,15 +38,15 @@ export default defineComponent({
     position: relative;
 }
 .counter {
-    height: 16px;
-    width: 16px;
+    height: 1rem;
+    width: 1rem;
 
     position: absolute;
     top: 0;
     right: 0;
 
     border-radius: 4px;
-    background-color: rgba(255, 115, 13, 1);
+    background-color: var(--highlight-bright-color);
 
     font-weight: lighter;
     font-size: 12px;

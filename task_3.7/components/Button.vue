@@ -42,15 +42,15 @@ export default defineComponent({
 
 <style scoped>
 .button {
-    padding: 0 16px;
+    padding: 0 1rem;
     height: 50px;
 
     border: none;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     transition: width 2s ease-in-out;
 }
 .button-img {
-    max-height: 24px;
+    max-height: 1.5rem;
 }
 .button-inner {
     display: flex;

@@ -13,7 +13,7 @@
                 :key="card.id"
                 :card-item="card"
                 :max-width="'300px'"
-                :min-height="'450px'"
+                :min-height="'350px'"
             />
         </div>
     </section>

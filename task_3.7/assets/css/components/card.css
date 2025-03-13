@@ -1,12 +1,12 @@
 .card {
-    padding: 1rem;
+    padding: 0.5rem;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    gap: 0.5rem;
 
-    background: linear-gradient(180deg, rgba(245,245,245,1) 70%, rgba(234,234,234,1) 90%);
+    background: linear-gradient(145deg, rgba(234,234,234,1) 10%, rgba(245,245,245,1) 100%);
     border-radius: var(--border-radius);
 
     position: relative;
@@ -22,12 +22,27 @@
 }
 .add-to-cart__button {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 1rem;
+    right: 1rem;
 }
 .card-body {
-
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--muted-text);
 }
 .card-title {
-
+    font-weight: 500;
+    color: var(--text-color);
+}
+.card-price {
+    margin-right: 0.5rem;
+}
+.card-discount {
+    font-size: 14px;
+    opacity: 0.5;
+}
+.cross-lined-price {
+    margin-right: 0.5rem;
+    text-decoration: line-through;
 }

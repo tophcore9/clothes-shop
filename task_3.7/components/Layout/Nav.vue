@@ -4,7 +4,7 @@
             <div class="nav-content">
                 <div class="nav-section" :class="isScrolled ? 'nav-section-dark' : ''">
                     <NuxtLink :class="isPageOpened('index')" to="/">
-                        <Icon :icon-url="isScrolled ? '/assets/images/logo-white.png' : '/assets/images/logo-dark.png'" :icon-width="'auto'" :icon-height="'auto'"/>
+                        <Icon :icon-url="isScrolled ? '/assets/images/logo-white.png' : '/assets/images/logo-dark.png'" :icon-width="'138px'" :icon-height="'24px'"/>
                     </NuxtLink>
                     <NuxtLink :class="isPageOpened('index')" to="/">Home</NuxtLink>
                     <NuxtLink :class="isPageOpened('products')" to="/products">Products</NuxtLink>

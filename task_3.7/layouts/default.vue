@@ -97,4 +97,8 @@ body, html, ._container {
     font-size: 1.5rem;
     font-weight: 700;
 }
+
+._muted-text {
+    color: var(--muted-text);
+}
 </style>

@@ -1,6 +1,5 @@
 <template>
-    <div :style="{width: iconWidth, height: iconHeight, position: 'relative'}">
-        <img class="icon" :src="iconUrl" alt="Icon" draggable="false" />
+    <div class="icon" :style="{width: iconWidth, height: iconHeight, backgroundImage: `url(${iconUrl})`}">
         <div class="counter" v-if="counter > 0">{{counter}}</div>
     </div>
 </template>
@@ -14,12 +13,12 @@ export default defineComponent({
         iconWidth: {
             type: String,
             required: false,
-            default: '32'
+            default: '32px'
         },
         iconHeight: {
             type: String,
             required: false,
-            default: '32'
+            default: '32px'
         },
         iconUrl: {
             type: String,
@@ -36,11 +35,10 @@ export default defineComponent({
 
 <style scoped>
 .icon {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
     position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .counter {
     height: 1rem;

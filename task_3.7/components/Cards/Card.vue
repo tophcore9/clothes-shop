@@ -23,9 +23,10 @@
         <div class="card-body">
             <div class="card-title">{{cardItem.title}}</div>
             <div>
-                {{priceWithDiscount}}
-                <span>
-                    {{cardItem.price}} ({{cardItem.discount}}% off)
+                <span class="card-price">${{priceWithDiscount}}</span>
+                <span class="card-discount">
+                    <span class="cross-lined-price">${{cardItem.price}}</span>
+                    <span>({{cardItem.discount}}% off)</span>
                 </span>
             </div>
         </div>

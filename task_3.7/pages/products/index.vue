@@ -1,10 +1,24 @@
 <template>
     <div class="products">
         <div class="filters">
-
+                <h2 class="_title">Filters:</h2>
         </div>
-        <div class="cards">
-            <Card v-for="card in cardsStore.cards" :key="card.id" :card-item="card" :min-height="'475px'"/>
+
+        <div>
+            <div class="content">
+                <div>
+                    <span class="_title">All categories</span>
+                    <span class="_muted-text">32,862,945 Results</span>
+                </div>
+                <select value="first">
+                    <option value="first">First value</option>
+                    <option value="second">Second value</option>
+                    <option value="third">Third value</option>
+                </select>
+            </div>
+            <div class="cards">
+                <Card v-for="card in cardsStore.cards" :key="card.id" :card-item="card" :min-height="'350px'"/>
+            </div>
         </div>
     </div>
 </template>
@@ -16,7 +30,9 @@ import Card from "~/components/Cards/Card.vue";
 
 export default defineComponent({
     name: "index",
-    components: {Card},
+    components: {
+        Card,
+    },
     data() {
         return {
             cardsStore: useCardsStore()
@@ -39,5 +55,11 @@ export default defineComponent({
 .filters {
     margin-right: 1.5rem;
     min-width: 300px;
+}
+.content {
+    margin-bottom: 2rem;
+
+    display: flex;
+    justify-content: space-between;
 }
 </style>

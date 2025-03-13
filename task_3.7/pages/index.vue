@@ -5,7 +5,7 @@
     <section class="best-selling">
         <div>
             Text
-            <Button picture-url="/assets/images/cart.svg">See more</Button>
+            <Button @click="navigateTo('/products')" picture-url="/assets/images/cart.svg">See more</Button>
         </div>
         <div v-if="cardsStore.cards.length > 0" class="best-selling-cards">
             <Card

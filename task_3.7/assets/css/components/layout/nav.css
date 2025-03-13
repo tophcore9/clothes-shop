@@ -23,3 +23,8 @@
     opacity: 0.8;
     text-decoration: none;
 }
+
+.nav-link-active {
+    font-weight: 500;
+    color: var(--highlight-bright-color);
+}

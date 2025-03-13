@@ -46,6 +46,9 @@ export const useCartStore = defineStore("cart", {
             }
 
             return false;
+        },
+        clearCart() {
+            this.cards = [];
         }
     },
     getters: {
@@ -64,6 +67,6 @@ export const useCartStore = defineStore("cart", {
         resultPrice(): number {
             const result = this.totalPriceWithDiscount + this.shippingPrice;
             return Number(result.toFixed(2));
-        }
+        },
     }
 })

@@ -16,6 +16,20 @@
 
     opacity: 0.7;
 }
+
+.success {
+    background-color: var(--success-color);
+}
+
+.warning {
+    color: var(--text-color);
+    background-color: var(--warning-color);
+}
+
+.danger {
+    background-color: var(--danger-color);
+}
+
 .slide-enter-from,
 .slide-leave-to {
     opacity: 0;

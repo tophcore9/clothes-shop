@@ -50,6 +50,9 @@ export default defineComponent({
     --footer-title-color: #FFFFFF;
     --footer-bg-color: #2F1D1D;
 
+    --success-color: #77DB61;
+    --warning-color: #FCFF64;
+    --danger-color: #FF595C;
 }
 
 #__nuxt {

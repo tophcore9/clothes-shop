@@ -1,6 +1,6 @@
 <template>
     <transition name="slide">
-        <div v-if="isVisible" class="alert-modal">
+        <div v-if="isVisible" class="alert-modal" :class="type">
             {{alertMessage}}
         </div>
     </transition>
@@ -20,6 +20,16 @@ export default defineComponent({
             type: String,
             required: false,
             default: 'Error!',
+        },
+        type: { // success, warning, danger (default)
+            type: String,
+            required: false,
+            default: 'danger',
+        },
+        time: {
+            type: Number,
+            required: false,
+            default: 2000,
         }
     },
     methods: {
@@ -32,7 +42,7 @@ export default defineComponent({
             if (newValue) {
                 setTimeout(() => {
                     this.closeAlertModal();
-                }, 1500);
+                }, this.time);
             }
         }
     }

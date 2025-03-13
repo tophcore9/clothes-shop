@@ -4,9 +4,9 @@
             <div>
                 <img @click="navigateTo(`/products/product-${item.id}`)" class="picture" :src="item.images[0]" alt="">
             </div>
-            <div>
+            <div class="cart-item-info">
                 <div>{{item.title}}</div>
-                <div>{{item.category}}</div>
+                <div class="category">{{item.category}}</div>
             </div>
         </div>
 

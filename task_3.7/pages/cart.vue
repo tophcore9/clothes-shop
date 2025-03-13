@@ -1,12 +1,12 @@
 <template>
-    <div class="header">
+    <div v-if="cartStore.cards.length > 0" class="header">
         <h2 class="_title">Shopping cart</h2>
         <div>{{cartStore.cards.length}} items</div>
         <div class="vertical-line"></div>
         <div>${{cartStore.resultPrice}}</div>
     </div>
 
-    <div class="cart-container">
+    <div v-if="cartStore.cards.length > 0" class="cart-container">
         <div class="cart-items">
             <CartItem
                 v-for="card in cartStore.cards"
@@ -39,9 +39,18 @@
                 <div>${{cartStore.resultPrice}}</div>
             </div>
 
-            <Button class="checkout-button">Checkout</Button>
+            <Button @click="checkout" class="checkout-button">Checkout</Button>
         </div>
     </div>
+
+    <div v-else>
+        <h1 class="_title">There are no items in cart :(</h1>
+    </div>
+
+    <AlertModal
+        v-model:is-visible="isCheckoutSuccess"
+        type="success"
+        alert-message="You bought the items successfully!"/>
 </template>
 
 <script lang="ts">
@@ -49,16 +58,25 @@ import {defineComponent} from 'vue'
 import {useCartStore} from "~/stores/cartStore";
 import CartItem from "~/components/Cards/CartItem.vue";
 import Button from '../components/Button.vue';
+import AlertModal from "~/components/Modals/AlertModal.vue";
 
 export default defineComponent({
     name: "cart",
     components: {
+        AlertModal,
         CartItem,
         Button
     },
     data() {
         return {
-            cartStore: useCartStore()
+            cartStore: useCartStore(),
+            isCheckoutSuccess: false,
+        }
+    },
+    methods: {
+        checkout() {
+            this.isCheckoutSuccess = true;
+            this.cartStore.clearCart();
         }
     }
 })

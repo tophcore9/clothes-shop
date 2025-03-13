@@ -1,8 +1,8 @@
 <template>
     <button
         class="button"
-        :style="{height: height + 'px',
-        width: width + 'px',
+        :style="{minHeight: height + 'px',
+        minWidth: width + 'px',
         backgroundColor: backgroundColor}"
     >
         <div class="button-inner">

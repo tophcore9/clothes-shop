@@ -5,14 +5,21 @@ import cards from "~/server/api/cards";
 export enum EUpdateType {
     Increment,
     Decrement,
+    CustomCount
 }
 
-const shippingCoefficient: number = 0.05;
+interface ICartStore {
+    cards: ICardInCart[]
+    shippingCoefficient: number;
+}
 
 export const useCartStore = defineStore("cart", {
-    state: () => ({
-        cards: [] as ICardInCart[],
-    }),
+    state: () => {
+        return <ICartStore> {
+            cards: [],
+            shippingCoefficient: 0.05
+        }
+    },
     actions: {
         addItem(item: ICard) {
             if (this.cards.findIndex(card => card.id === item.id) < 0) {
@@ -22,30 +29,35 @@ export const useCartStore = defineStore("cart", {
         removeItem(id: String) {
             this.cards = this.cards.filter(card => card.id !== id);
         },
-        updateItem(id: String, changeType: EUpdateType) {
+        updateItem(id: String, changeType: EUpdateType, enteredCount: string = ''): boolean {
             const index = this.cards.findIndex(card => card.id === id);
             const card = this.cards[index];
 
             if (index >= 0) {
                 if (changeType === EUpdateType.Increment) {
                     card.count++;
+                    return true;
                 } else if (changeType === EUpdateType.Decrement) {
-                    card.count--
-
-                    if (card.count <= 0) this.removeItem(card.id);
+                    if (card.count - 1 > 0) {
+                        card.count--
+                        return true;
+                    }
+                } else if (changeType === EUpdateType.CustomCount) {
+                    if (Number(enteredCount)) {
+                        card.count = Number(enteredCount);
+                        return true;
+                    }
                 }
             } else {
                 console.error("Can't find the item with id " + id);
             }
+
+            return false;
         },
         isItemInCart(id: string): boolean {
             const index = this.cards.findIndex(card => card.id === id);
 
-            if (index >= 0) {
-                return true;
-            }
-
-            return false;
+            return index >= 0;
         },
         clearCart() {
             this.cards = [];
@@ -61,7 +73,7 @@ export const useCartStore = defineStore("cart", {
             return Number(result.toFixed(2));
         },
         shippingPrice(): number {
-            const result = this.totalPrice * shippingCoefficient;
+            const result = this.totalPrice * this.shippingCoefficient;
             return Number(result.toFixed(2));
         },
         resultPrice(): number {

@@ -46,11 +46,6 @@
     <div v-else>
         <h1 class="_title">There are no items in cart :(</h1>
     </div>
-
-    <AlertModal
-        v-model:is-visible="isCheckoutSuccess"
-        type="success"
-        alert-message="You bought the items successfully!"/>
 </template>
 
 <script lang="ts">
@@ -58,24 +53,30 @@ import {defineComponent} from 'vue'
 import {useCartStore} from "~/stores/cartStore";
 import CartItem from "~/components/Cards/CartItem.vue";
 import Button from '../components/Button.vue';
-import AlertModal from "~/components/Modals/AlertModal.vue";
+import Alert from "~/components/Modals/Alert.vue";
+import {useDebugStore} from "~/stores/debugStore";
 
 export default defineComponent({
     name: "cart",
     components: {
-        AlertModal,
+        AlertModal: Alert,
         CartItem,
         Button
     },
     data() {
         return {
             cartStore: useCartStore(),
+            debug: useDebugStore(),
             isCheckoutSuccess: false,
         }
     },
     methods: {
         checkout() {
-            this.isCheckoutSuccess = true;
+            this.debug.showAlert(<IAlert>{
+                message: 'You bought the items successfully!',
+                type: 'success'
+            });
+
             this.cartStore.clearCart();
         }
     }

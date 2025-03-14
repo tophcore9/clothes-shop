@@ -16,7 +16,7 @@
                 <span class="content">{{content}}</span>
                 <div class="buttons">
                     <Button @click="closeModal" :background-color="'#FFFFFF'">Cancel</Button>
-                    <Button @click="$emit('confirm')">Delete</Button>
+                    <Button @click="handleConfirm">Delete</Button>
                 </div>
             </div>
         </div>
@@ -39,17 +39,14 @@ export default defineComponent({
         },
         title: {
             type: String,
-            required: false,
             default: 'Confirm'
         },
         content: {
             type: String,
-            required: false,
             default: 'Are you sure?'
         },
         confirmText: {
             type: String,
-            required: false,
             default: 'Ok'
         },
     },
@@ -58,6 +55,10 @@ export default defineComponent({
         closeModal() {
             this.$emit('update:isOpen', false);
         },
+        handleConfirm() {
+            this.$emit('confirm');
+            this.closeModal();
+        }
     },
 })
 </script>

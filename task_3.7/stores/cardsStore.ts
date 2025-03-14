@@ -1,10 +1,16 @@
 import { defineStore } from "pinia";
 import type {ICard} from "~/types/card";
 
+interface ICardStore {
+    cards: ICard[];
+}
+
 export const useCardsStore = defineStore("cards", {
-    state: () => ({
-        cards: [] as ICard[]
-    }),
+    state: () => {
+        return <ICardStore> {
+            cards: []
+        }
+    },
     actions: {
         getCardById(id: string): ICard {
             const index = this.cards.findIndex(card => card.id === id);

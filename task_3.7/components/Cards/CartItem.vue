@@ -13,12 +13,12 @@
         <div class="count">
             <div class="count-controls">
                 <Button
-                    @click="cartStore.updateItem(item.id, EUpdateType.Decrement)"
+                    @click="decrementItem"
                     :height="40"
                     :width="40"
                     picture-url="/assets/images/decrement.svg"
                 ></Button>
-                <input class="count-input" type="text" :value="item.count">
+                <input @change="" class="count-input" type="text" :value="item.count">
                 <Button
                     @click="cartStore.updateItem(item.id, EUpdateType.Increment)"
                     :height="40"
@@ -34,19 +34,11 @@
         </div>
 
         <Button
-            @click="isModalShown = true"
+            @click="removeItem"
             :height="40"
             :width="40"
             picture-url="/assets/images/remove.svg"
         ></Button>
-
-        <Modal
-            v-model:is-open="isModalShown"
-            @confirm="cartStore.removeItem(item.id)"
-            title="Confirm deletion"
-            confirm-button-text="Confirm deletion"
-            content="Are you sure want to delete this item?"
-        />
     </div>
 </template>
 
@@ -55,6 +47,7 @@ import {defineComponent} from 'vue'
 import type {ICardInCart} from "~/types/card";
 import Button from '../Button.vue';
 import Modal from '../Modals/Modal.vue';
+import {useDebugStore} from "~/stores/debugStore";
 
 export default defineComponent({
     name: "CartItem",
@@ -65,13 +58,36 @@ export default defineComponent({
     data() {
         return {
             cartStore: useCartStore(),
-            isModalShown: false,
+            debug: useDebugStore(),
         }
     },
     props: {
         item: {
             type: Object as PropType<ICardInCart>,
             required: true
+        }
+    },
+    methods: {
+        decrementItem() {
+            if (!this.cartStore.updateItem(this.item.id, EUpdateType.Decrement)) {
+                this.removeItem();
+            }
+        },
+        removeItem() {
+            this.debug.showModal(<IModal>{
+                title: 'Confirm deletion',
+                content: 'Are you sure want to delete this item?',
+                confirmText: 'Confirm deletion',
+                visible: false,
+                confirmFunction: () => {
+                    this.cartStore.removeItem(this.item.id);
+
+                    this.debug.showAlert(<IAlert>{
+                        message: 'You deleted an item successfully!',
+                        type: 'warning',
+                    })
+                }
+            });
         }
     }
 })

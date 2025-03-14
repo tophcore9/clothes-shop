@@ -8,22 +8,42 @@
         </div>
         <Footer></Footer>
     </div>
+
+    <Alert
+        :alert-message="debug.alert.message"
+        :type="debug.alert.type"
+        v-model:is-visible="debug.alert.visible"
+        :time="debug.alert.time"
+    />
+    <Modal
+        :title="debug.modal.title"
+        :confirm-text="debug.modal.confirmText"
+        :content="debug.modal.content"
+        v-model:is-open="debug.modal.visible"
+        @confirm="debug.modal.confirmFunction()"
+    />
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+import {defineComponent} from 'vue';
 import Nav from '../components/Layout/Nav.vue';
 import Footer from '../components/Layout/Footer.vue';
+import Alert from "~/components/Modals/Alert.vue";
+import Modal from "~/components/Modals/Modal.vue";
+import {useDebugStore} from "~/stores/debugStore";
 
 export default defineComponent({
     name: "default",
     components: {
+        Alert,
+        Modal,
         Footer,
         Nav
     },
     data() {
         return {
-            cardsStore: useCardsStore()
+            cardsStore: useCardsStore(),
+            debug: useDebugStore()
         }
     },
     async mounted() {

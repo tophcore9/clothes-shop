@@ -7,16 +7,10 @@
         <div class="card-image-block">
             <img class="card-image" :src="cardItem.images[0]" alt="NO">
             <Button
-                v-if="cartStore.isItemInCart(cardItem.id)"
                 class="add-to-cart__button"
-                picture-url="/assets/images/remove-from-cart.png"
-                @click.stop="cartStore.removeItem(cardItem.id)"
-            ></Button>
-            <Button
-                v-else
-                class="add-to-cart__button"
-                picture-url="/assets/images/add-to-cart.png"
-                @click.stop="cartStore.addItem(cardItem)"
+                :highlighted="isInCart"
+                :picture-url="isInCart ? '/assets/images/remove-from-cart.png' : '/assets/images/add-to-cart.png'"
+                @click.stop="checkState"
             ></Button>
         </div>
 
@@ -48,7 +42,7 @@ export default defineComponent({
     },
     data() {
         return {
-            cartStore: useCartStore()
+            cartStore: useCartStore(),
         }
     },
     props: {
@@ -77,6 +71,15 @@ export default defineComponent({
             default: 'auto'
         }
     },
+    methods: {
+        checkState() {
+            if (this.cartStore.isItemInCart(this.cardItem.id)) {
+                this.cartStore.removeItem(this.cardItem.id);
+            } else {
+                this.cartStore.addItem(this.cardItem);
+            }
+        }
+    },
     computed: {
         priceWithDiscount(): number {
             if (this.cardItem.discount <= 0) {
@@ -86,6 +89,9 @@ export default defineComponent({
             const priceWithDiscount: number = this.cardItem.price - this.cardItem.price * this.cardItem.discount / 100;
 
             return Number(priceWithDiscount.toFixed(2));
+        },
+        isInCart(): boolean {
+            return this.cartStore.isItemInCart(this.cardItem.id);
         }
     }
 })

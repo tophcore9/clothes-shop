@@ -32,17 +32,11 @@
                 </p>
                 <p class="discount-end">{{item.discount}}% off ends soon</p>
                 <Button
-                    v-if="useCartStore().isItemInCart(item.id)"
-                    @click="useCartStore().removeItem(item.id)"
                     class="add-to-cart__button"
-                    :picture-url="'/assets/images/remove-from-cart.png'"
-                >Remove from cart</Button>
-                <Button
-                    v-else
-                    @click="useCartStore().addItem(item)"
-                    class="add-to-cart__button"
-                    :picture-url="'/assets/images/add-to-cart.png'"
-                >Add to cart</Button>
+                    :highlighted="isInCart"
+                    :picture-url="isInCart ? '/assets/images/remove-from-cart.png' : '/assets/images/add-to-cart.png'"
+                    @click="checkState"
+                >{{isInCart ? 'Remove from cart' : 'Add to cart'}}</Button>
             </div>
 
             <div class="description-block">
@@ -67,6 +61,7 @@ import {defineComponent} from 'vue'
 import type {ICard} from "~/types/card";
 import {useCardsStore} from "~/stores/cardsStore";
 import Button from '../../components/Button.vue';
+import {useCartStore} from "~/stores/cartStore";
 
 export default defineComponent({
     name: "product-[product_id]",
@@ -76,6 +71,7 @@ export default defineComponent({
     data() {
         return {
             item: {} as ICard,
+            cartStore: useCartStore(),
             currentImageIndex: 0,
         }
     },
@@ -99,6 +95,13 @@ export default defineComponent({
         toggleCurrentImage(event: Event) {
             const eventTarget = event.target as HTMLImageElement;
             this.currentImageIndex = this.item.images.findIndex(image => image === new URL(eventTarget.currentSrc).pathname);
+        },
+        checkState() {
+            if (this.cartStore.isItemInCart(this.item.id)) {
+                this.cartStore.removeItem(this.item.id);
+            } else {
+                this.cartStore.addItem(this.item);
+            }
         }
     },
     computed: {
@@ -110,6 +113,9 @@ export default defineComponent({
             const priceWithDiscount: number = this.item.price - this.item.price * this.item.discount / 100;
 
             return Number(priceWithDiscount.toFixed(2));
+        },
+        isInCart(): boolean {
+            return this.cartStore.isItemInCart(this.item.id);
         }
     },
     created() {

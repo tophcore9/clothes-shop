@@ -1,6 +1,7 @@
 <template>
     <button
         class="button"
+        :class="{'button-highlighted': highlighted}"
         :style="{minHeight: height + 'px',
         minWidth: width + 'px',
         backgroundColor: backgroundColor}"
@@ -20,23 +21,23 @@ export default defineComponent({
     props: {
         width: {
             type: Number,
-            required: false,
         },
         height: {
             type: Number,
-            required: false,
             default: 50
         },
         pictureUrl: {
             type: String,
-            required: false,
             default: ''
         },
         backgroundColor: {
             type: String,
-            required: false,
             default: 'var(--secondary-color)'
-        }
+        },
+        highlighted: {
+            type: Boolean,
+            default: false
+        },
     },
 })
 </script>
@@ -48,7 +49,13 @@ export default defineComponent({
 
     border: none;
     border-radius: 0.5rem;
-    transition: width 2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+.button:hover {
+    transform: scale(1.05);
+}
+.button:active {
+    transform: scale(1.1);
 }
 .button-img {
     max-height: 1.5rem;
@@ -60,5 +67,9 @@ export default defineComponent({
     gap: 5px;
 
     position: relative;
+}
+.button-highlighted {
+    background-color: var(--highlight-bright-color) !important;
+    color: white !important;
 }
 </style>

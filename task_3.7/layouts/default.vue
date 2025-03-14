@@ -1,3 +1,10 @@
+<!--
+    MAKE A RESPONSIVE DESIGN FOR CART PRODUCT ITEM PAGES AND PRODUCTS PAGE
+    MAKE A SELECT COMPONENT
+    MAKE A LAYOUT FOR THE HOME PAGE AND MAKE IT RESPONSIVE
+    ADD SOME ANIMATIONS
+-->
+
 <template>
     <div class="_container">
         <Nav></Nav>
@@ -48,6 +55,7 @@ export default defineComponent({
     },
     async mounted() {
         this.cardsStore.cards = await $fetch("/api/cards");
+        this.cardsStore.filteredCards = this.cardsStore.cards;
     }
 })
 </script>

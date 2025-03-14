@@ -3,12 +3,16 @@ import type {ICard} from "~/types/card";
 
 interface ICardStore {
     cards: ICard[];
+    filteredCards: ICard[];
+    currentCategory: string;
 }
 
 export const useCardsStore = defineStore("cards", {
     state: () => {
         return <ICardStore> {
-            cards: []
+            cards: [],
+            filteredCards: [],
+            currentCategory: 'All categories',
         }
     },
     actions: {
@@ -19,10 +23,10 @@ export const useCardsStore = defineStore("cards", {
                 return this.cards[index];
             }
 
-            return {id: 'not found'} as ICard;
+            return <ICard>{id: 'not found'};
         },
         getAllCategories(): string[] {
-            let categories: string[] = [];
+            let categories: string[] = ['All categories'];
 
             this.cards.forEach(card => {
                 if (!categories.includes(card.category)) {
@@ -31,7 +35,16 @@ export const useCardsStore = defineStore("cards", {
             })
 
             return categories;
-        }
+        },
+        filterByCategory(category: string) {
+            if (category === 'All categories') {
+                this.filteredCards = this.cards;
+            } else {
+                this.filteredCards = this.cards.filter(card => card.category === category);
+            }
+
+            this.currentCategory = category;
+        },
     },
     getters: {
         minPrice(): number {

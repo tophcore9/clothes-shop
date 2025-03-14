@@ -1,39 +1,17 @@
-<!--
-    MAKE FILTERS LOGIC
-    MAKE A RESPONSIVE DESIGN FOR CART PRODUCT ITEM PAGES AND PRODUCTS PAGE
-    MAKE A SELECT COMPONENT
-    MAKE A LAYOUT FOR THE HOME PAGE AND MAKE IT RESPONSIVE
-    ADD SOME ANIMATIONS
-
-    CHANGE STYLES IN MODAL AND ALERT
--->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <template>
     <div class="products">
         <div class="filters">
             <h2 class="_title">Filters:</h2>
 
             <DropDown title="Category" class="categories" :is-opened="true">
-                <button
+                <div
                     class="category"
+                    :class="cardsStore.currentCategory === category ? 'active-category' : ''"
                     v-for="category in cardsStore.getAllCategories()"
+                    @click="cardsStore.filterByCategory(category)"
                 >
                     {{category}}
-                </button>
+                </div>
             </DropDown>
 
             <DropDown title="Price" :is-opened="true">
@@ -44,8 +22,8 @@
         <div>
             <div class="content">
                 <div>
-                    <span class="_title">All categories</span>
-                    <span class="_muted-text">32,862,945 Results</span>
+                    <span class="_title">{{cardsStore.currentCategory}}</span>
+                    <span class="_muted-text">{{cardsStore.filteredCards.length}} Results</span>
                 </div>
                 <select value="first">
                     <option value="first">First value</option>
@@ -54,7 +32,7 @@
                 </select>
             </div>
             <div class="cards">
-                <Card v-for="card in cardsStore.cards" :key="card.id" :card-item="card" :min-height="'350px'"/>
+                <Card v-for="card in cardsStore.filteredCards" :key="card.id" :card-item="card" :min-height="'350px'"/>
             </div>
         </div>
     </div>
@@ -115,8 +93,14 @@ export default defineComponent({
     padding-left: 2rem;
 
     display: block;
-    background-color: transparent;
-    border: none;
+    width: 100%;
+    height: 27px;
+}
+.category:hover {
+    cursor: pointer;
+}
+.active-category {
+    text-decoration: underline;
 }
 .category:last-child {
     margin-bottom: 0;

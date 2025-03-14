@@ -7,21 +7,21 @@
             </div>
         </div>
         <Footer></Footer>
-    </div>
 
-    <Alert
-        :alert-message="debug.alert.message"
-        :type="debug.alert.type"
-        v-model:is-visible="debug.alert.visible"
-        :time="debug.alert.time"
-    />
-    <Modal
-        :title="debug.modal.title"
-        :confirm-text="debug.modal.confirmText"
-        :content="debug.modal.content"
-        v-model:is-open="debug.modal.visible"
-        @confirm="debug.modal.confirmFunction()"
-    />
+        <Alert
+            :alert-message="debug.alert.message"
+            :type="debug.alert.type"
+            v-model:is-visible="debug.alert.visible"
+            :time="debug.alert.time"
+        />
+        <Modal
+            :title="debug.modal.title"
+            :confirm-text="debug.modal.confirmText"
+            :content="debug.modal.content"
+            v-model:is-open="debug.modal.visible"
+            @confirm="debug.modal.confirmFunction()"
+        />
+    </div>
 </template>
 
 <script lang="ts">

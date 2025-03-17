@@ -1,3 +1,5 @@
+@import "/assets/css/variables";
+
 .cart-item, .info, .count-controls {
     display: flex;
     justify-content: space-between;
@@ -13,14 +15,14 @@
         border-top: 1px solid var(--border-color);
     }
 }
-@media (max-width: 700px) {
+@media (max-width: $breakpoint-md) {
     .cart-item {
         padding-bottom: 1rem;
         padding-top: 1rem;
         flex-direction: column;
 
         &:first-child {
-            padding-top: 0;
+            padding-top: 1rem;
         }
     }
 }
@@ -28,7 +30,7 @@
 .info {
     justify-content: flex-start;
 }
-@media (max-width: 700px) {
+@media (max-width: $breakpoint-md) {
     .info {
         width: 100%;
     }
@@ -39,6 +41,7 @@
     flex-direction: column;
     gap: 1rem;
 }
+
 .picture {
     width: 130px;
     height: 130px;
@@ -49,6 +52,7 @@
         cursor: pointer;
     }
 }
+
 .count-input {
     width: 80px;
     height: 40px;
@@ -58,29 +62,34 @@
 
     text-align: center;
 }
+
 .primal-price {
     color: var(--muted-text);
     text-decoration: line-through;
 }
+
 .discounted-price {
     color: var(--highlight-color);
 }
+
 .cart-item-info {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
+
 .category {
     color: var(--muted-text);
     font-size: 1rem;
 }
+
 .items-control {
     width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-@media (max-width: 700px) {
+@media (max-width: $breakpoint-md) {
     .items-control {
         width: 100%;
         align-items: baseline;

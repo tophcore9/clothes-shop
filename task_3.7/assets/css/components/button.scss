@@ -1,3 +1,5 @@
+@import "/assets/css/variables";
+
 .button {
     padding: 0 1rem;
     height: 3rem;
@@ -13,9 +15,11 @@
         transform: scale(1.1);
     }
 }
+
 .button-img {
     max-height: 1.5rem;
 }
+
 .button-inner {
     display: flex;
     justify-content: center;
@@ -24,6 +28,7 @@
 
     position: relative;
 }
+
 .button-highlighted {
     background-color: var(--highlight-bright-color) !important;
     color: white !important;

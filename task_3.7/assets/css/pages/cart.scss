@@ -1,3 +1,5 @@
+@import "/assets/css/variables";
+
 .cart-container {
     width: 100%;
 
@@ -5,7 +7,7 @@
     justify-content: space-between;
     gap: 2rem;
 }
-@media (max-width: 1250px) {
+@media (max-width: $breakpoint-xl) {
     .cart-container {
         flex-direction: column;
     }
@@ -17,7 +19,7 @@
     flex-direction: column;
     gap: 40px;
 }
-@media (max-width: 900px) {
+@media (max-width: $breakpoint-lg) {
     .cart-items {
         gap: 0;
     }
@@ -32,7 +34,7 @@
 
     color: var(--muted-text);
 }
-@media (max-width: 900px) {
+@media (max-width: $breakpoint-lg) {
     .header {
         margin-bottom: 1rem;
         flex-direction: column;
@@ -45,6 +47,7 @@
     height: 1.5rem;
     border: 1px solid var(--border-color);
 }
+
 .summary {
     padding: 1rem;
     max-height: 325px;
@@ -61,7 +64,7 @@
 
     font-weight: 400;
 }
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-sm) {
     .summary {
         min-width: auto;
     }
@@ -71,18 +74,22 @@
     display: flex;
     justify-content: space-between;
 }
+
 .summary-total {
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
+
 .checkout-button {
     width: 100%;
 }
+
 .cross-lined-price {
     text-decoration: line-through;
     font-size: 1rem;
     color: var(--muted-text);
 }
+
 .general-info {
     display: flex;
     gap: 1rem;

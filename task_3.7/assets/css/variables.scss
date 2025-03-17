@@ -1,0 +1,23 @@
+$breakpoint-xl: 1250px;
+$breakpoint-lg: 900px;
+$breakpoint-md: 700px;
+$breakpoint-sm: 550px;
+
+:root {
+  --primary-color: #FFFFFF;
+  --secondary-color: #FFE699;
+  --text-color: #1E1E1E;
+  --highlight-color: #EA9127;
+  --highlight-bright-color: #FF730D;
+  --muted-text: #8F8F8F;
+  --border-color: #DEDFE5;
+  --border-radius: 12px;
+  --dark-bg-color: #2F1D1D;
+
+  --footer-color: #D5D2D2;
+  --footer-title-color: #FFFFFF;
+
+  --success-color: #77DB61;
+  --warning-color: #FCFF64;
+  --danger-color: #FF595C;
+}

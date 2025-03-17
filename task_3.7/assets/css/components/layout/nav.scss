@@ -1,3 +1,5 @@
+@import "/assets/css/variables";
+
 .nav {
     height: 90px;
     width: 100%;
@@ -6,8 +8,9 @@
     top: 0;
     left: 0;
 
-    z-index: 1;
+    z-index: 3;
 
+    background-color: var(--primary-color);
     transition: background-color 0.2s ease-in-out;
 }
 
@@ -25,7 +28,7 @@
     align-items: center;
     gap: 3rem;
 }
-@media (max-width: 900px) {
+@media (max-width: $breakpoint-md) {
     .nav-section {
         gap: 2rem;
     }
@@ -36,14 +39,15 @@
     opacity: 0.8;
     text-decoration: none;
 }
+@media (max-width: $breakpoint-md) {
+    .nav-link-full {
+        display: none;
+    }
+}
+
 .nav-link-active {
     font-weight: 500;
     color: var(--highlight-bright-color);
-}
-@media (max-width: 700px) {
-    .nav-link, .nav-link-active {
-        display: none;
-    }
 }
 
 .nav-section-dark {
@@ -62,7 +66,7 @@
 .button-more {
     display: none;
 }
-@media (max-width: 700px) {
+@media (max-width: $breakpoint-md) {
     .button-more {
         display: block;
     }

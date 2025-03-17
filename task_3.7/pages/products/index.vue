@@ -21,9 +21,9 @@
 
         <div class="content-wrapper">
             <div class="content">
-                <div>
-                    <span class="_title">{{cardsStore.currentCategory}}</span>
-                    <span class="_muted-text">{{cardsStore.filteredCards.length}} Results</span>
+                <div class="header">
+                    <div class="_title">{{cardsStore.currentCategory}}</div>
+                    <div class="_muted-text">{{cardsStore.filteredCards.length}} Results</div>
                 </div>
                 <select value="first">
                     <option value="first">First value</option>

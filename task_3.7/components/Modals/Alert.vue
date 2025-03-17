@@ -50,5 +50,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import "/assets/css/components/alert.scss";
+@import "/assets/css/components/modals/alert.scss";
 </style>

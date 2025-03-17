@@ -26,9 +26,10 @@
     height: 130px;
     object-fit: cover;
     border-radius: var(--border-radius);
-}
-.picture:hover {
-    cursor: pointer;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 .count-input {
     width: 80px;

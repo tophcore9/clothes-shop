@@ -40,25 +40,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.banner {
-    margin-bottom: 100px;
-    width: 100%;
-
-    border-radius: 24px;
-    background-color: var(--secondary-color);
-}
-.main-banner {
-    height: 512px;
-}
-.best-selling {
-    display: flex;
-    justify-content: space-between;
-}
-.best-selling-cards {
-    height: 300px;
-
-    display: flex;
-    flex-flow: row wrap;
-    gap: 46px;
-}
+@import "/assets/css/pages/home.scss";
 </style>

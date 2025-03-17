@@ -10,38 +10,46 @@
     border-radius: var(--border-radius);
 
     position: relative;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
-.card:hover {
-    cursor: pointer;
-}
+
 .card-image {
     width: 100%;
     height: 100%;
 
     border-radius: var(--border-radius);
 }
+
 .add-to-cart__button {
     position: absolute;
     top: 1rem;
     right: 1rem;
 }
+
 .card-body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     color: var(--muted-text);
 }
+
 .card-title {
     font-weight: 500;
     color: var(--text-color);
 }
+
 .card-price {
     margin-right: 0.5rem;
 }
+
 .card-discount {
     font-size: 14px;
     opacity: 0.5;
 }
+
 .cross-lined-price {
     margin-right: 0.5rem;
     text-decoration: line-through;

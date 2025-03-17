@@ -129,5 +129,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import "assets/css/pages/product.css";
+@import "/assets/css/pages/product.scss";
 </style>

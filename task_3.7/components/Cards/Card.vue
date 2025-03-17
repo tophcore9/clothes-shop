@@ -98,5 +98,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import "assets/css/components/card.css";
+@import "/assets/css/components/card.scss";
 </style>

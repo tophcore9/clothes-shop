@@ -49,47 +49,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.select {
-    position: relative;
-    user-select: none;
-}
-.select-title {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0.5rem;
-
-    padding: 0.5rem;
-    border-radius: var(--border-radius);
-}
-.select-title:hover,
-.select-title:focus,
-.select-title:active {
-    cursor: pointer;
-    background-color: #efefef;
-}
-.select-menu {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    position: absolute;
-    top: 100%;
-    right: 0;
-
-    background-color: var(--primary-color);
-}
-.select-item {
-    padding: 0 0.5rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 32px;
-    width: 100%;
-}
-.select-item:hover {
-    cursor: pointer;
-    background-color: #F1F1F1;
-}
+@import "/assets/css/components/select.scss";
 </style>

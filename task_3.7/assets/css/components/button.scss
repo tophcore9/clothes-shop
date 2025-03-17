@@ -1,0 +1,30 @@
+.button {
+    padding: 0 1rem;
+    height: 3rem;
+
+    border: none;
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+    &:active {
+        transform: scale(1.1);
+    }
+}
+.button-img {
+    max-height: 1.5rem;
+}
+.button-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    position: relative;
+}
+.button-highlighted {
+    background-color: var(--highlight-bright-color) !important;
+    color: white !important;
+}

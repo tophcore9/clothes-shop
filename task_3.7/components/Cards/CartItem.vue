@@ -94,5 +94,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import "assets/css/components/cart_item.css";
+@import "/assets/css/components/cart_item.scss";
 </style>

@@ -26,10 +26,11 @@
     background-repeat: no-repeat;
     background-position: center;
     transition: background-color 0.3s ease-out;
-}
-.current-image__slider:hover {
-    background-color: var(--secondary-color);
-    cursor: pointer;
+
+    &:hover {
+        background-color: var(--secondary-color);
+        cursor: pointer;
+    }
 }
 .current-image__left-slider {
     left: 0.5rem;
@@ -61,10 +62,11 @@
     opacity: 0.5;
 
     transition: opacity 0.3s ease-out;
-}
-.image:hover {
-    opacity: 1 !important;
-    cursor: pointer;
+
+    &:hover {
+        opacity: 1 !important;
+        cursor: pointer;
+    }
 }
 .content-block {
     height: 100%;

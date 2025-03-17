@@ -32,6 +32,15 @@
     text-decoration: none;
 }
 
+.nav-section-dark {
+    &>.nav-link {
+        color: var(--muted-text);
+    }
+    &>.nav-link-active {
+        color: white;
+    }
+}
+
 .nav-link-active {
     font-weight: 500;
     color: var(--highlight-bright-color);
@@ -39,11 +48,4 @@
 
 .scrolled-nav {
     background-color: var(--dark-bg-color);
-}
-
-.nav-section-dark>.nav-link {
-    color: var(--muted-text);
-}
-.nav-section-dark>.nav-link-active {
-    color: white;
 }

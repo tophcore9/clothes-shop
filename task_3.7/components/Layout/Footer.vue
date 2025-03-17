@@ -68,5 +68,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import "assets/css/components/layout/footer.css";
+@import "/assets/css/components/layout/footer.scss";
 </style>

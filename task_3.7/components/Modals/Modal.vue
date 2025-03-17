@@ -64,5 +64,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import '/assets/css/components/modal.css';
+@import "/assets/css/components/modal.scss";
 </style>

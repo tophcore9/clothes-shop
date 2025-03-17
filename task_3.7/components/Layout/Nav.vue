@@ -73,5 +73,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import "assets/css/components/layout/nav.css";
+@import "/assets/css/components/layout/nav.scss";
 </style>

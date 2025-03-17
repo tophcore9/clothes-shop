@@ -50,20 +50,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.drop-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    user-select: none;
-}
-.drop-title:hover {
-    cursor: pointer;
-}
-.arrow-icon {
-    transition: transform 0.2s ease-in-out;
-}
-.arrow-icon-rotated {
-    transform: rotate(180deg);
-}
+@import "/assets/css/components/drop_down.scss";
 </style>

@@ -19,7 +19,7 @@
             </DropDown>
         </div>
 
-        <div>
+        <div class="content-wrapper">
             <div class="content">
                 <div>
                     <span class="_title">{{cardsStore.currentCategory}}</span>
@@ -59,50 +59,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.products {
-    display: flex;
-}
-.cards {
-    width: 100%;
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(275px, 31%));
-    gap: 2rem;
-}
-.filters {
-    margin-right: 2rem;
-    min-width: 300px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-.content {
-    margin-bottom: 2rem;
-
-    display: flex;
-    justify-content: space-between;
-}
-.categories {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-.category {
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-
-    display: block;
-    width: 100%;
-    height: 27px;
-}
-.category:hover {
-    cursor: pointer;
-}
-.active-category {
-    text-decoration: underline;
-}
-.category:last-child {
-    margin-bottom: 0;
-}
+@import "/assets/css/pages/products.css";
 </style>

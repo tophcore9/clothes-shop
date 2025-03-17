@@ -1,5 +1,6 @@
 <template>
     <div class="card">
+        <h2 class="_title item-title__mobile">{{item.title}}</h2>
         <div class="images-block">
             <div class="current-image__wrapper">
                 <img
@@ -24,7 +25,7 @@
 
         <div class="content-block">
             <div class="content">
-                <h2 class="_title">{{item.title}}</h2>
+                <h2 class="_title item-title">{{item.title}}</h2>
                 <h2 class="price">${{priceWithDiscount}}</h2>
                 <p class="discount">
                     <span class="discount-price">${{item.price}}</span>

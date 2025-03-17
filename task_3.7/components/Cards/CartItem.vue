@@ -10,35 +10,37 @@
             </div>
         </div>
 
-        <div class="count">
-            <div class="count-controls">
-                <Button
-                    @click="decrementItem"
-                    :height="40"
-                    :width="40"
-                    picture-url="/assets/images/decrement.svg"
-                ></Button>
-                <input @change="" class="count-input" type="text" :value="item.count">
-                <Button
-                    @click="cartStore.updateItem(item.id, EUpdateType.Increment)"
-                    :height="40"
-                    :width="40"
-                    picture-url="/assets/images/increment.svg"
-                ></Button>
+        <div class="items-control">
+            <div class="count">
+                <div class="count-controls">
+                    <Button
+                        @click="decrementItem"
+                        :height="40"
+                        :width="40"
+                        picture-url="/assets/images/decrement.svg"
+                    ></Button>
+                    <input @change="" class="count-input" type="text" :value="item.count">
+                    <Button
+                        @click="cartStore.updateItem(item.id, EUpdateType.Increment)"
+                        :height="40"
+                        :width="40"
+                        picture-url="/assets/images/increment.svg"
+                    ></Button>
+                </div>
+                <div>
+                    <span class="discounted-price">${{(item.price - item.price * item.discount / 100).toFixed(2)}}</span>
+                    &nbsp;
+                    <span class="primal-price">${{item.price}}</span>
+                </div>
             </div>
-            <div>
-                <span class="discounted-price">${{(item.price - item.price * item.discount / 100).toFixed(2)}}</span>
-                &nbsp;
-                <span class="primal-price">${{item.price}}</span>
-            </div>
-        </div>
 
-        <Button
-            @click="removeItem"
-            :height="40"
-            :width="40"
-            picture-url="/assets/images/remove.svg"
-        ></Button>
+            <Button
+                @click="removeItem"
+                :height="40"
+                :width="40"
+                picture-url="/assets/images/remove.svg"
+            ></Button>
+        </div>
     </div>
 </template>
 

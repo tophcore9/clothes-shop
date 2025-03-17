@@ -1,9 +1,11 @@
 <template>
     <div v-if="cartStore.cards.length > 0" class="header">
         <h2 class="_title">Shopping cart</h2>
-        <div>{{cartStore.cards.length}} items</div>
-        <div class="vertical-line"></div>
-        <div>${{cartStore.resultPrice}}</div>
+        <div class="general-info">
+            <div>{{cartStore.cards.length}} items</div>
+            <div class="vertical-line"></div>
+            <div>${{cartStore.resultPrice}}</div>
+        </div>
     </div>
 
     <div v-if="cartStore.cards.length > 0" class="cart-container">

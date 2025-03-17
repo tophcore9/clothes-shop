@@ -25,11 +25,25 @@
     align-items: center;
     gap: 3rem;
 }
+@media (max-width: 900px) {
+    .nav-section {
+        gap: 2rem;
+    }
+}
 
 .nav-link {
     color: var(--text-color);
     opacity: 0.8;
     text-decoration: none;
+}
+.nav-link-active {
+    font-weight: 500;
+    color: var(--highlight-bright-color);
+}
+@media (max-width: 700px) {
+    .nav-link, .nav-link-active {
+        display: none;
+    }
 }
 
 .nav-section-dark {
@@ -41,11 +55,15 @@
     }
 }
 
-.nav-link-active {
-    font-weight: 500;
-    color: var(--highlight-bright-color);
-}
-
 .scrolled-nav {
     background-color: var(--dark-bg-color);
+}
+
+.button-more {
+    display: none;
+}
+@media (max-width: 700px) {
+    .button-more {
+        display: block;
+    }
 }

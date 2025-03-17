@@ -15,6 +15,11 @@
         cursor: pointer;
     }
 }
+@media (max-width: 550px) {
+    .card {
+        max-height: 550px !important;
+    }
+}
 
 .card-image {
     width: 100%;

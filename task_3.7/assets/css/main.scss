@@ -43,6 +43,11 @@ body, html, ._container {
 
     min-height: 100vh;
 }
+@media (max-width: 700px) {
+    ._content {
+        padding: 6rem 0 0 0;
+    }
+}
 
 ._wrapper {
     margin: 0 auto;
@@ -50,6 +55,11 @@ body, html, ._container {
 
     height: 100%;
     max-width: 1440px;
+}
+@media (max-width: 700px) {
+    ._wrapper {
+        padding: 1rem;
+    }
 }
 
 ._title, ._title_2 {

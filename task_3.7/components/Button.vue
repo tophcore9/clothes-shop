@@ -2,8 +2,8 @@
     <button
         class="button"
         :class="{'button-highlighted': highlighted}"
-        :style="{minHeight: height + 'px',
-        minWidth: width + 'px',
+        :style="{height: height + 'px',
+        width: width + 'px',
         backgroundColor: backgroundColor}"
     >
         <div class="button-inner">

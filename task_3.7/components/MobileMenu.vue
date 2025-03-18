@@ -44,7 +44,6 @@ export default defineComponent({
 
     width: 100vh;
     height: calc(100vh - 90px);
-    z-index: -2;
 }
 
 .slide-enter-active {

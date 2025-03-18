@@ -1,4 +1,4 @@
-@import "/assets/css/variables";
+@use "/assets/css/variables";
 
 .products {
     display: flex;
@@ -11,18 +11,18 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, calc(32.5% - 1rem)));
     gap: 2rem;
 }
-@media (max-width: $breakpoint-xl) {
+@media (max-width: variables.$breakpoint-xl) {
     .cards {
         gap: 1rem;
         grid-template-columns: repeat(auto-fit, minmax(200px, calc(32.8% - 0.5rem)));
     }
 }
-@media (max-width: $breakpoint-lg) {
+@media (max-width: variables.$breakpoint-lg) {
     .cards {
         grid-template-columns: repeat(auto-fit, minmax(200px, calc(50% - 0.5rem)));
     }
 }
-@media (max-width: $breakpoint-sm) {
+@media (max-width: variables.$breakpoint-sm) {
     .cards {
         grid-template-columns: 100%;
     }
@@ -36,13 +36,13 @@
     flex-direction: column;
     gap: 2rem;
 }
-@media (max-width: $breakpoint-xl) {
+@media (max-width: variables.$breakpoint-xl) {
     .filters {
         margin-right: 1rem;
         width: 250px;
     }
 }
-@media (max-width: $breakpoint-md) {
+@media (max-width: variables.$breakpoint-md) {
     .filters {
         display: none;
     }
@@ -54,7 +54,7 @@
     display: flex;
     justify-content: space-between;
 }
-@media (max-width: $breakpoint-lg) {
+@media (max-width: variables.$breakpoint-lg) {
     .content {
         margin-bottom: 1rem;
     }
@@ -65,7 +65,7 @@
     align-items: center;
     justify-content: flex-start;
 }
-@media (max-width: $breakpoint-lg) {
+@media (max-width: variables.$breakpoint-lg) {
     .header {
         flex-direction: column;
         align-items: flex-start;

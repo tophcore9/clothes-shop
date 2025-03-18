@@ -1,4 +1,4 @@
-@import "/assets/css/variables";
+@use "/assets/css/variables";
 
 .cart-container {
     width: 100%;
@@ -7,7 +7,7 @@
     justify-content: space-between;
     gap: 2rem;
 }
-@media (max-width: $breakpoint-xl) {
+@media (max-width: variables.$breakpoint-xl) {
     .cart-container {
         flex-direction: column;
     }
@@ -19,7 +19,7 @@
     flex-direction: column;
     gap: 40px;
 }
-@media (max-width: $breakpoint-lg) {
+@media (max-width: variables.$breakpoint-lg) {
     .cart-items {
         gap: 0;
     }
@@ -34,7 +34,7 @@
 
     color: var(--muted-text);
 }
-@media (max-width: $breakpoint-lg) {
+@media (max-width: variables.$breakpoint-lg) {
     .header {
         margin-bottom: 1rem;
         flex-direction: column;
@@ -64,7 +64,7 @@
 
     font-weight: 400;
 }
-@media (max-width: $breakpoint-sm) {
+@media (max-width: variables.$breakpoint-sm) {
     .summary {
         min-width: auto;
     }

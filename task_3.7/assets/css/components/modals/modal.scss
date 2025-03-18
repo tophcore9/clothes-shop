@@ -1,6 +1,8 @@
-@import "/assets/css/variables";
+@use "/assets/css/variables";
 
 .modal {
+    padding: 1rem;
+
     position: fixed;
     top: 0;
     left: 0;

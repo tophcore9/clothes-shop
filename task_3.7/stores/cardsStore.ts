@@ -47,7 +47,7 @@ export const useCardsStore = defineStore("cards", {
 
             return categories;
         },
-        filterByCategory(category: string) {
+        filterByCategory(category: string): ICard[] {
             if (category === 'All categories') {
                 this.filteredCards = this.cards;
             } else {
@@ -55,10 +55,14 @@ export const useCardsStore = defineStore("cards", {
             }
 
             this.currentCategory = category;
+
+            return this.filteredCards;
         },
-        filterByTitle(title: string) {
+        filterByTitle(title: string): ICard[] {
             this.filteredCards = this.cards.filter(card => card.title.toLowerCase().includes(title.toLowerCase()));
             this.currentCategory = title;
+
+            return this.filteredCards;
         }
     },
     getters: {

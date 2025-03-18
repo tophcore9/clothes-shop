@@ -107,8 +107,21 @@
             <h2 class="about-us__title">Categories</h2>
             <p class="about-us__description">Find what you are looking for</p>
         </div>
-        <div class="categories banner">
-
+        <div class="categories-banner banner">
+            <div class="categories">
+                <div class="category-item" v-for="item in cardsStore.cards.slice(2, 5)">
+                    <img class="category-item__image" :src="item.images[0]" alt="">
+                    <div class="category-item__title">{{item.category}}</div>
+                </div>
+            </div>
+            <div class="categories-bottom">
+                <div class="categories-bottom__text">
+                    Horem ipsum dolor sit amet, consectetur adipiscing elit.
+                </div>
+                <Button background-color="#FFFFFF" :width="150" picture-url="/assets/images/see-more.svg">
+                    Explore
+                </Button>
+            </div>
         </div>
     </section>
 
@@ -161,8 +174,11 @@ export default defineComponent({
     align-items: center;
     text-align: center;
 }
-.categories {
+.categories-banner {
     height: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .reviews-block {
     display: flex;
@@ -181,5 +197,40 @@ export default defineComponent({
     font-size: 2rem;
     font-weight: 700;
     max-width: 450px;
+}
+.categories-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+.category-item__image {
+    max-width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+.categories {
+    height: 85%;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+.category-item {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1rem;
+
+    &:nth-child(2) {
+        transform: translateY(6rem);
+    }
+}
+.categories-bottom__text {
+    max-width: 450px;
+}
+.category-item__title {
+    font-weight: 700;
 }
 </style>

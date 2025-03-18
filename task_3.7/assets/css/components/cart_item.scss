@@ -1,4 +1,4 @@
-@import "/assets/css/variables";
+@use "/assets/css/variables";
 
 .cart-item, .info, .count-controls {
     display: flex;
@@ -15,7 +15,7 @@
         border-top: 1px solid var(--border-color);
     }
 }
-@media (max-width: $breakpoint-md) {
+@media (max-width: variables.$breakpoint-md) {
     .cart-item {
         padding-bottom: 1rem;
         padding-top: 1rem;
@@ -30,7 +30,7 @@
 .info {
     justify-content: flex-start;
 }
-@media (max-width: $breakpoint-md) {
+@media (max-width: variables.$breakpoint-md) {
     .info {
         width: 100%;
     }
@@ -89,7 +89,7 @@
     justify-content: space-between;
     align-items: center;
 }
-@media (max-width: $breakpoint-md) {
+@media (max-width: variables.$breakpoint-md) {
     .items-control {
         width: 100%;
         align-items: baseline;

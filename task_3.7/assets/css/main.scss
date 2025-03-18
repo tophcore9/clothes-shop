@@ -1,4 +1,4 @@
-@import "variables";
+@use "/assets/css/variables";
 
 #__nuxt {
     height: 100%;
@@ -26,7 +26,7 @@ body, html, ._container {
 
     min-height: 100vh;
 }
-@media (max-width: $breakpoint-md) {
+@media (max-width: variables.$breakpoint-md) {
     ._content {
         padding: 6rem 0 0 0;
     }
@@ -39,7 +39,7 @@ body, html, ._container {
     height: 100%;
     max-width: 1440px;
 }
-@media (max-width: $breakpoint-md) {
+@media (max-width: variables.$breakpoint-md) {
     ._wrapper {
         padding: 1rem;
     }

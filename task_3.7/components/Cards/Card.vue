@@ -30,7 +30,7 @@
 <script lang="ts">
 import {defineComponent} from 'vue';
 import Icon from '../Icon.vue';
-import type {ICard} from "~/types/card";
+import type {ICard} from "~/stores/cardsStore";
 import Button from '../Button.vue';
 import {useCartStore} from "~/stores/cartStore";
 

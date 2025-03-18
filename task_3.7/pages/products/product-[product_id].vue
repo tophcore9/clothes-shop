@@ -58,8 +58,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
-import type {ICard} from "~/types/card";
+import {defineComponent} from 'vue';
+import type {ICard} from "~/stores/cardsStore";
 import {useCardsStore} from "~/stores/cardsStore";
 import Button from '../../components/Button.vue';
 import {useCartStore} from "~/stores/cartStore";

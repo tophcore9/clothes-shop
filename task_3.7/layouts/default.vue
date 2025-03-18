@@ -48,12 +48,14 @@ export default defineComponent({
     data() {
         return {
             cardsStore: useCardsStore(),
+            reviewsStore: useReviewsStore(),
             debug: useDebugStore()
         }
     },
     async mounted() {
         this.cardsStore.cards = await $fetch("/api/cards");
         this.cardsStore.filteredCards = this.cardsStore.cards;
+        this.reviewsStore.reviews = await $fetch("/api/reviews");
     }
 })
 </script>

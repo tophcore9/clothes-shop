@@ -95,6 +95,24 @@
             </div>
         </div>
     </section>
+
+    <section class="categories-block">
+        <div class="about-us-header">
+            <h2 class="about-us__title">Categories</h2>
+            <p class="about-us__description">Find what you are looking for</p>
+        </div>
+        <div class="categories banner">
+
+        </div>
+    </section>
+
+    <section class="reviews-block">
+        <h2 class="reviews-title">What customers say about FoxmindEd?</h2>
+
+        <div class="reviews">
+            <ReviewItem v-for="review in reviewsStore.reviews" :key="review.id" :review="review"/>
+        </div>
+    </section>
 </template>
 
 <script lang="ts">
@@ -102,16 +120,19 @@ import {defineComponent} from 'vue';
 import {useCardsStore} from "~/stores/cardsStore";
 import Button from '../components/Button.vue';
 import Card from '../components/Cards/Card.vue';
+import ReviewItem from '../components/ReviewItem.vue';
 
 export default defineComponent({
     name: "index",
     components: {
         Button,
-        Card
+        Card,
+        ReviewItem
     },
     data() {
         return {
-            cardsStore: useCardsStore()
+            cardsStore: useCardsStore(),
+            reviewsStore: useReviewsStore()
         }
     },
 })
@@ -119,4 +140,33 @@ export default defineComponent({
 
 <style scoped>
 @import "/assets/css/pages/home.scss";
+
+.categories-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.categories {
+    height: 850px;
+}
+.reviews-block {
+    display: flex;
+    flex-direction: column;
+}
+.reviews {
+    display: flex;
+    gap: 3rem;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    font-weight: 500;
+}
+.reviews-title {
+    margin-bottom: 3rem;
+
+    font-size: 2rem;
+    font-weight: 700;
+    max-width: 450px;
+}
 </style>

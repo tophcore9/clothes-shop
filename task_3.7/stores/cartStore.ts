@@ -1,6 +1,9 @@
 import { defineStore } from "pinia";
-import type {ICard, ICardInCart} from "~/types/card";
-import cards from "~/server/api/cards";
+import type {ICard} from "./cardsStore";
+
+export interface ICardInCart extends ICard {
+    count: number;
+}
 
 export enum EUpdateType {
     Increment,

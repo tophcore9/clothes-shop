@@ -1,5 +1,16 @@
 import { defineStore } from "pinia";
-import type {ICard} from "~/types/card";
+
+export interface ICard {
+    id: string;
+    title: string;
+    images: string[];
+    price: number;
+    discount: number;
+    description: string;
+    features: string[];
+    category: string;
+}
+
 
 interface ICardStore {
     cards: ICard[];

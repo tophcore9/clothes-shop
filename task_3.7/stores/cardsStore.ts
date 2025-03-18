@@ -56,6 +56,10 @@ export const useCardsStore = defineStore("cards", {
 
             this.currentCategory = category;
         },
+        filterByTitle(title: string) {
+            this.filteredCards = this.cards.filter(card => card.title.toLowerCase().includes(title.toLowerCase()));
+            this.currentCategory = title;
+        }
     },
     getters: {
         minPrice(): number {

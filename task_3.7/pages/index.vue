@@ -22,8 +22,14 @@
             </div>
 
             <div class="main-search">
-                <input class="search-input" type="text" placeholder="What are you looking for?"/>
-                <Button class="search-button" :width="48" :height="48" picture-url="/assets/images/search.svg"></Button>
+                <input v-model="searchInput" class="search-input" type="text" placeholder="What are you looking for?"/>
+                <Button
+                    @click="handleSearch"
+                    class="search-button"
+                    :width="48"
+                    :height="48"
+                    picture-url="/assets/images/search.svg"
+                ></Button>
             </div>
         </div>
 
@@ -132,9 +138,16 @@ export default defineComponent({
     data() {
         return {
             cardsStore: useCardsStore(),
-            reviewsStore: useReviewsStore()
+            reviewsStore: useReviewsStore(),
+            searchInput: ''
         }
     },
+    methods: {
+        handleSearch() {
+            this.cardsStore.filterByTitle(this.searchInput);
+            navigateTo('/products');
+        }
+    }
 })
 </script>
 

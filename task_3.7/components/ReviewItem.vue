@@ -81,4 +81,7 @@ export default defineComponent({
 .user-picture {
     align-self: flex-end;
 }
+.grade {
+    font-weight: 700;
+}
 </style>

@@ -2,6 +2,7 @@
 
 .card {
     padding: 0.5rem;
+    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -10,8 +11,6 @@
 
     background: linear-gradient(145deg, rgba(234,234,234,1) 10%, rgba(245,245,245,1) 100%);
     border-radius: var(--border-radius);
-
-    position: relative;
 
     &:hover {
         cursor: pointer;
@@ -40,24 +39,10 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    color: var(--muted-text);
 }
 
-.card-title {
-    font-weight: 500;
-    color: var(--text-color);
-}
-
-.card-price {
-    margin-right: 0.5rem;
-}
-
-.card-discount {
-    font-size: 14px;
-    opacity: 0.5;
-}
-
-.cross-lined-price {
-    margin-right: 0.5rem;
-    text-decoration: line-through;
+.price-content {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
 }

@@ -2,8 +2,8 @@
     <button
         class="button"
         :class="{'button-highlighted': highlighted}"
-        :style="{height: height + 'px',
-        width: width + 'px',
+        :style="{height: height,
+        width: width,
         backgroundColor: backgroundColor}"
     >
         <div class="button-inner">
@@ -20,11 +20,12 @@ export default defineComponent({
     name: "Button",
     props: {
         width: {
-            type: Number,
+            type: String,
+            default: 'auto'
         },
         height: {
-            type: Number,
-            default: 50
+            type: String,
+            default: '40px'
         },
         pictureUrl: {
             type: String,

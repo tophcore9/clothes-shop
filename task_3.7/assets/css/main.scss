@@ -45,18 +45,44 @@ body, html, ._container {
     }
 }
 
-._title, ._title_2 {
-    margin-right: 1rem;
-
-    color: var(--text-color);
-    font-size: 1.5rem;
-    font-weight: 700;
+._highlighted-text {
+    color: var(--highlight-color) !important;
 }
 
-._title_2 {
-    font-size: 18px;
+._crossed-text {
+    text-decoration: line-through;
 }
 
-._muted-text {
+._weight-500 {
+    font-weight: 500 !important;
+}
+
+._font-sm {
+    font-size: 14px;
+}
+
+._muted-text-lg,
+._muted-text-md,
+._muted-text-sm {
     color: var(--muted-text);
 }
+
+._muted-text-lg {font-size: 18px;}
+._muted-text-md {font-size: 16px;}
+._muted-text-sm {font-size: 14px;}
+
+._title-1,
+._title-2,
+._title-3,
+._title-4 {
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+._title-1 {
+    font-size: 4rem;
+    font-weight: 800;
+}
+._title-2 {font-size: 2rem;}
+._title-3 {font-size: 1.5rem;}
+._title-4 {font-size: 18px;}

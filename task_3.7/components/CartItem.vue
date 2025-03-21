@@ -6,7 +6,7 @@
             </div>
             <div class="cart-item-info">
                 <div>{{item.title}}</div>
-                <div class="category">{{item.category}}</div>
+                <div class="_muted-text-md">{{item.category}}</div>
             </div>
         </div>
 
@@ -15,8 +15,8 @@
                 <div class="count-controls">
                     <Button
                         @click="decrementItem"
-                        :height="40"
-                        :width="40"
+                        height="40px"
+                        width="40px"
                         picture-url="/assets/images/decrement.svg"
                     ></Button>
                     <input @change="" class="count-input" type="text" :value="item.count">
@@ -28,16 +28,16 @@
                     ></Button>
                 </div>
                 <div>
-                    <span class="discounted-price">${{(item.price - item.price * item.discount / 100).toFixed(2)}}</span>
+                    <span class="_highlighted-text">${{(item.price - item.price * item.discount / 100).toFixed(2)}}</span>
                     &nbsp;
-                    <span class="primal-price">${{item.price}}</span>
+                    <span class="_muted-text-md _crossed-text">${{item.price}}</span>
                 </div>
             </div>
 
             <Button
                 @click="removeItem"
-                :height="40"
-                :width="40"
+                height="40px"
+                width="40px"
                 picture-url="/assets/images/remove.svg"
             ></Button>
         </div>
@@ -79,7 +79,7 @@ export default defineComponent({
             this.debug.showModal(<IModal>{
                 title: 'Confirm deletion',
                 content: 'Are you sure want to delete this item?',
-                confirmText: 'Confirm deletion',
+                confirmText: 'Delete',
                 visible: false,
                 confirmFunction: () => {
                     this.cartStore.removeItem(this.item.id);

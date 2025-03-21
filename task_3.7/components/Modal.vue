@@ -2,21 +2,21 @@
     <transition name="fade">
         <div v-if="isOpen" @click.self="closeModal" class="modal">
             <div class="modal-content">
-                <div class="header">
-                    <h1 class="title">{{title}}</h1>
+                <div class="modal-header">
+                    <h1 class="_title-4">{{title}}</h1>
                     <Button
                         @click="closeModal"
                         picture-url="assets/images/close.svg"
                         :background-color="'#FFFFFF'"
-                        :width="24"
-                        :height="24"
+                        width="24px"
+                        height="24px"
                     ></Button>
                 </div>
-                <div class="divider"></div>
-                <span class="content">{{content}}</span>
-                <div class="buttons">
-                    <Button @click="closeModal" :background-color="'#FFFFFF'">Cancel</Button>
-                    <Button @click="handleConfirm">Delete</Button>
+                <div class="modal-divider"></div>
+                <span class="modal-text">{{content}}</span>
+                <div class="modal-buttons">
+                    <Button class="modal-cancel" @click="closeModal" :background-color="'#FFFFFF'">Cancel</Button>
+                    <Button class="modal-confirm" @click="handleConfirm">{{confirmText}}</Button>
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 <template>
     <div v-if="cardsStore.cards.length > 0" class="products">
         <div class="filters">
-            <h2 class="_title">Filters:</h2>
+            <h2 class="_title-3">Filters:</h2>
 
             <DropDown title="Category" class="categories" :is-opened="true">
                 <div
@@ -17,9 +17,17 @@
             <DropDown title="Price" :is-opened="true">
                 <div class="price-block">
                     <div class="price-inputs">
-                        <input v-model="cardsStore.minPriceValueFilter" class="price-input" type="text">
+                        <input
+                            v-model="cardsStore.minPriceValueFilter"
+                            class="price-input"
+                            type="text"
+                        >
                         <div class="horizontal-line"></div>
-                        <input v-model="cardsStore.maxPriceValueFilter" class="price-input" type="text">
+                        <input
+                            v-model="cardsStore.maxPriceValueFilter"
+                            class="price-input"
+                            type="text"
+                        >
                     </div>
                     <DoubleRange
                         :min="cardsStore.minPrice"
@@ -34,13 +42,28 @@
         <div class="content-wrapper">
             <div class="content">
                 <div class="header">
-                    <div class="_title">{{ cardsStore.currentCategoryFilter }}</div>
-                    <div class="_muted-text">{{cardsStore.filteredCards.length}} Results</div>
+                    <div class="_title-3">{{ cardsStore.currentCategoryFilter }}</div>
+                    <div class="_muted-text-lg">{{cardsStore.filteredCards.length}} Results</div>
                 </div>
-                <Select :options="['first', 'second', 'third']"/>
+                <Select
+                    placeholder="Most relevant"
+                    :options="[
+                    'Most relevant' as ESortType.MostRelevant,
+                    'Newest' as ESortType.Newest,
+                    'Cheapest' as ESortType.Cheapest,
+                    'Most expensive' as ESortType.MostExpensive,
+                    'Discount value' as ESortType.DiscountValue,
+                    ]"
+                    :model-value="cardsStore.sortType"
+                />
             </div>
             <div class="cards">
-                <Card v-for="card in cardsStore.filteredCards" :key="card.id" :card-item="card" :min-height="'350px'"/>
+                <Card
+                    v-for="card in cardsStore.filteredCards"
+                    :key="card.id"
+                    :card-item="card"
+                    min-height="350px"
+                />
             </div>
         </div>
     </div>
@@ -48,7 +71,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import {useCardsStore} from "~/stores/cardsStore";
+import {ESortType, useCardsStore} from "~/stores/cardsStore";
 import Card from "~/components/Card.vue";
 import DropDown from '~/components/DropDown.vue';
 import DoubleRange from '~/components/DoubleRange.vue';
@@ -56,6 +79,11 @@ import Select from '~/components/Select.vue';
 
 export default defineComponent({
     name: "index",
+    computed: {
+        ESortType() {
+            return ESortType
+        }
+    },
     components: {
         Card,
         DropDown,

@@ -1,10 +1,13 @@
 <template>
-    <nav class="nav" :class="{'scrolled-nav': isScrolled}">
+    <nav class="nav" :class="{'nav-scrolled': isScrolled}">
         <div class="_wrapper">
             <div class="nav-content">
                 <div class="nav-section" :class="isScrolled ? 'nav-section-dark' : ''">
                     <NuxtLink to="/">
-                        <Icon :icon-url="isScrolled ? '/assets/images/logo-white.png' : '/assets/images/logo-dark.png'" :icon-width="'138px'" :icon-height="'24px'"/>
+                        <Icon
+                            :icon-url="isScrolled ? '/assets/images/logo-white.png' : '/assets/images/logo-dark.png'"
+                            icon-width="138px"
+                            icon-height="1.5rem"/>
                     </NuxtLink>
                     <NuxtLink class="nav-link-full" :class="isPageOpened('index')" to="/">Home</NuxtLink>
                     <NuxtLink class="nav-link-full" :class="isPageOpened('products')" to="/products">Products</NuxtLink>
@@ -16,8 +19,8 @@
                         <Icon
                             :icon-url="isScrolled ? '/assets/images/cart-white.svg' : '/assets/images/cart.svg'"
                             :counter="useCartStore().cards.length"
-                            icon-width="32px"
-                            icon-height="32px"
+                            icon-width="2rem"
+                            icon-height="2rem"
                         />
                     </NuxtLink>
 
@@ -25,18 +28,18 @@
                         to="/profile">
                         <Icon
                             :icon-url="isScrolled ? '/assets/images/profile-white.svg' : '/assets/images/profile.svg'"
-                            icon-width="32px"
-                            icon-height="32px"
+                            icon-width="2rem"
+                            icon-height="2rem"
                         />
                     </NuxtLink>
 
                     <!-- BURGER MENU -->
                     <Button
                         @click="isMenuOpened = !isMenuOpened"
-                        class="button-more"
+                        class="nav-more__button"
                         :picture-url="handleBurgerMenuIcon()"
-                        :width="32"
-                        :height="32"
+                        width="2rem"
+                        height="2rem"
                         background-color="transparent">
                     </Button>
                 </div>

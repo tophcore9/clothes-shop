@@ -2,7 +2,7 @@
     <header class="main-banner banner">
         <div class="main-content">
             <div class="main-info">
-                <div class="main-title">
+                <div class="_title-1">
                     Unleash your inner fox enthusiast
                 </div>
                 <div>
@@ -26,8 +26,8 @@
                 <Button
                     @click="handleSearch"
                     class="search-button"
-                    :width="48"
-                    :height="48"
+                    width="3rem"
+                    height="3rem"
                     picture-url="/assets/images/search.svg"
                 ></Button>
             </div>
@@ -43,32 +43,37 @@
 
     <section class="best-selling">
         <div class="best-selling__block">
-            <h2 class="best-selling__title">Explore our best-selling categories</h2>
-            <p class="best-selling__content">Let the fox magic captivate your senses.</p>
-            <Button @click="navigateTo('/products')" picture-url="/assets/images/see-more.svg">See more</Button>
+            <h2 class="_title-2">Explore our best-selling categories</h2>
+            <p class="_muted-text-lg _weight-500">Let the fox magic captivate your senses.</p>
+            <Button
+                @click="navigateTo('/products')"
+                picture-url="/assets/images/see-more.svg"
+            >
+                See more
+            </Button>
         </div>
         <div v-if="cardsStore.cards.length > 0" class="best-selling-cards">
             <Card
                 v-for="card in cardsStore.cards.slice(0, 3)"
                 :key="card.id"
                 :card-item="card"
-                :max-width="'300px'"
-                :min-height="'350px'"
+                max-width="300px"
+                min-height="350px"
             />
         </div>
     </section>
 
     <section class="about-us">
         <header class="about-us-header">
-            <h2 class="about-us__title">About us</h2>
-            <p class="about-us__description">Shop now and make every day a fox-tastic adventure!</p>
+            <h2 class="_title-2">About us</h2>
+            <p class="_muted-text-lg _weight-500">Shop now and make every day a fox-tastic adventure!</p>
         </header>
         <div class="about-us__features">
             <div class="about-us__feature">
                 <div class="feature-circle">
                     <img class="feature-circle__image" src="/assets/images/about-us-1.svg" alt="">
                 </div>
-                <div class="feature-title">
+                <div class="_title-4">
                     Quality craftsmanship
                 </div>
                 <div class="feature-content">
@@ -80,7 +85,7 @@
                 <div class="feature-circle">
                     <img class="feature-circle__image" src="/assets/images/about-us-2.svg" alt="">
                 </div>
-                <div class="feature-title">
+                <div class="_title-4">
                     Diverse designs
                 </div>
                 <div class="feature-content">
@@ -92,7 +97,7 @@
                 <div class="feature-circle">
                     <img class="feature-circle__image" src="/assets/images/about-us-3.svg" alt="">
                 </div>
-                <div class="feature-title">
+                <div class="_title-4">
                     Customer delight
                 </div>
                 <div class="feature-content">
@@ -104,21 +109,25 @@
 
     <section class="categories-block">
         <div class="about-us-header">
-            <h2 class="about-us__title">Categories</h2>
-            <p class="about-us__description">Find what you are looking for</p>
+            <h2 class="_title-2">Categories</h2>
+            <p class="_muted-text-lg _weight-500">Find what you are looking for</p>
         </div>
         <div class="categories-banner banner">
             <div class="categories">
                 <div class="category-item" v-for="item in cardsStore.cards.slice(2, 5)">
                     <img class="category-item__image" :src="item.images[0]" alt="">
-                    <div class="category-item__title">{{item.category}}</div>
+                    <div class="_title-4">{{item.category}}</div>
                 </div>
             </div>
             <div class="categories-bottom">
                 <div class="categories-bottom__text">
                     Horem ipsum dolor sit amet, consectetur adipiscing elit.
                 </div>
-                <Button background-color="#FFFFFF" :width="150" picture-url="/assets/images/see-more.svg">
+                <Button
+                    background-color="#FFFFFF"
+                    width="150px"
+                    picture-url="/assets/images/see-more.svg"
+                >
                     Explore
                 </Button>
             </div>
@@ -126,10 +135,14 @@
     </section>
 
     <section class="reviews-block">
-        <h2 class="reviews-title">What customers say about FoxmindEd?</h2>
+        <h2 class="_title-2">What customers say about FoxmindEd?</h2>
 
         <div class="reviews">
-            <ReviewItem v-for="review in reviewsStore.reviews" :key="review.id" :review="review"/>
+            <ReviewItem
+                v-for="review in reviewsStore.reviews"
+                :key="review.id"
+                :review="review"
+            />
         </div>
     </section>
 </template>
@@ -166,71 +179,4 @@ export default defineComponent({
 
 <style scoped>
 @import "/assets/css/pages/home.scss";
-
-.categories-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.categories-banner {
-    height: 850px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.reviews-block {
-    display: flex;
-    flex-direction: column;
-}
-.reviews {
-    display: flex;
-    gap: 3rem;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    font-weight: 500;
-}
-.reviews-title {
-    margin-bottom: 3rem;
-
-    font-size: 2rem;
-    font-weight: 700;
-    max-width: 450px;
-}
-.categories-bottom {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-}
-.category-item__image {
-    max-width: 100%;
-    height: 70%;
-    object-fit: cover;
-    border-radius: var(--border-radius);
-}
-.categories {
-    height: 85%;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-}
-.category-item {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    gap: 1rem;
-
-    &:nth-child(2) {
-        transform: translateY(6rem);
-    }
-}
-.categories-bottom__text {
-    max-width: 450px;
-}
-.category-item__title {
-    font-weight: 700;
-}
 </style>

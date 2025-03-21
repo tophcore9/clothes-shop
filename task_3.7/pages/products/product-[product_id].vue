@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <h2 class="_title item-title__mobile">{{item.title}}</h2>
+        <h2 class="_title-3 item-title__mobile">{{item.title}}</h2>
         <div class="images-block">
             <div class="current-image__wrapper">
                 <img
@@ -25,15 +25,16 @@
 
         <div class="content-block">
             <div class="content">
-                <h2 class="_title item-title">{{item.title}}</h2>
-                <h2 class="price">${{priceWithDiscount}}</h2>
-                <p class="discount">
-                    <span class="discount-price">${{item.price}}</span>
+                <h2 class="_title-3 item-title">{{item.title}}</h2>
+                <h2 class="_title-2 _weight-500 _highlighted-text">${{priceWithDiscount}}</h2>
+                <p class="_muted-text-lg">
+                    <span class="_crossed-text">${{item.price}}</span>
                     <span>({{item.discount}}% off)</span>
                 </p>
-                <p class="discount-end">{{item.discount}}% off ends soon</p>
+                <p class="_font-sm _highlighted-text">{{item.discount}}% off ends soon</p>
                 <Button
-                    class="add-to-cart__button"
+                    width="45%"
+                    class="add-button"
                     :highlighted="isInCart"
                     :picture-url="isInCart ? '/assets/images/remove-from-cart.png' : '/assets/images/add-to-cart.png'"
                     @click="checkState"
@@ -41,14 +42,14 @@
             </div>
 
             <div class="description-block">
-                <h2 class="_title">Description</h2>
+                <h2 class="_title-3">Description</h2>
                 <div class="description-content">
                     {{item.description}}
                 </div>
             </div>
 
             <div class="features-block">
-                <h2 class="_title">Product features</h2>
+                <h2 class="_title-3">Product features</h2>
                 <ul class="features-list">
                     <li class="feature-item" v-for="feature in item.features">{{feature}}</li>
                 </ul>

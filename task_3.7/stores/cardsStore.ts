@@ -11,13 +11,21 @@ export interface ICard {
     category: string;
 }
 
-
 interface ICardStore {
     cards: ICard[];
     filteredCards: ICard[];
     currentCategoryFilter: string;
     maxPriceValueFilter: number,
     minPriceValueFilter: number,
+    sortType: ESortType;
+}
+
+export enum ESortType {
+    MostRelevant,
+    Newest,
+    Cheapest,
+    MostExpensive,
+    DiscountValue
 }
 
 export const useCardsStore = defineStore("cards", {
@@ -28,6 +36,7 @@ export const useCardsStore = defineStore("cards", {
             currentCategoryFilter: 'All categories',
             maxPriceValueFilter: 0,
             minPriceValueFilter: 0,
+            sortType: ESortType.MostRelevant,
         }
     },
     actions: {
@@ -59,6 +68,8 @@ export const useCardsStore = defineStore("cards", {
             }
 
             this.currentCategoryFilter = category;
+            this.filterByPrice();
+            this.sortCards(this.sortType);
 
             return this.filteredCards;
         },
@@ -66,14 +77,42 @@ export const useCardsStore = defineStore("cards", {
             this.filteredCards = this.cards.filter(card => card.title.toLowerCase().includes(title.toLowerCase()));
             this.currentCategoryFilter = title;
 
+            this.filterByPrice();
+            this.sortCards(this.sortType);
+
             return this.filteredCards;
         },
-        setMinPriceValueFilter(value: number) {
-            this.minPriceValueFilter = value;
+        filterByPrice(): ICard[] {
+            this.filteredCards = this.filteredCards.filter((item) => item.price <= this.maxPriceValueFilter && item.price >= this.minPriceValueFilter);
+
+            return this.filteredCards;
         },
-        setMaxPriceValueFilter(value: number) {
-            this.maxPriceValueFilter = value;
-        },
+        sortCards(sortType: ESortType): ICard[] {
+            switch (sortType) {
+                case ESortType.MostRelevant: {
+                    this.filteredCards.sort((a, b) => a.id - b.id);
+                    break;
+                }
+                case ESortType.Newest: {
+                    this.filteredCards.sort((a, b) => b.id - a.id);
+                    break;
+                }
+                case ESortType.Cheapest: {
+                    this.filteredCards.sort((a, b) => a.price - b.price);
+                    break;
+                }
+                case ESortType.MostExpensive: {
+                    this.filteredCards.sort((a, b) => b.price - a.price);
+                    break;
+                }
+                case ESortType.DiscountValue: {
+                    this.filteredCards.sort((a, b) => b.discount - a.discount);
+                    break;
+                }
+            }
+
+            return this.filteredCards;
+        }
     },
     getters: {
         minPrice(): number {

@@ -8,6 +8,8 @@
             <img class="card-image" :src="cardItem.images[0]" alt="NO">
             <Button
                 class="add-to-cart__button"
+                height="3rem"
+                width="3rem"
                 :highlighted="isInCart"
                 :picture-url="isInCart ? '/assets/images/remove-from-cart.png' : '/assets/images/add-to-cart.png'"
                 @click.stop="checkState"
@@ -15,12 +17,12 @@
         </div>
 
         <div class="card-body">
-            <div class="card-title">{{cardItem.title}}</div>
-            <div>
-                <span class="card-price">${{priceWithDiscount}}</span>
-                <span class="card-discount">
-                    <span class="cross-lined-price">${{cardItem.price}}</span>
-                    <span>({{cardItem.discount}}% off)</span>
+            <div>{{cardItem.title}}</div>
+            <div class="price-content">
+                <span class="_muted-text-lg">${{priceWithDiscount}}</span>
+                <span>
+                    <span class="_muted-text-sm _crossed-text">${{cardItem.price}}</span>
+                    <span class="_muted-text-sm">({{cardItem.discount}}% off)</span>
                 </span>
             </div>
         </div>

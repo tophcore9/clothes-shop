@@ -1,14 +1,13 @@
 @use "/assets/css/variables";
 
 .nav {
-    height: 90px;
-    width: 100%;
-
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 2;
 
-    z-index: 1;
+    height: 90px;
+    width: 100%;
 
     background-color: var(--primary-color);
     transition: background-color 0.2s ease-in-out;
@@ -59,15 +58,15 @@
     }
 }
 
-.scrolled-nav {
+.nav-scrolled {
     background-color: var(--dark-bg-color);
 }
 
-.button-more {
+.nav-more__button {
     display: none;
 }
 @media (max-width: variables.$breakpoint-md) {
-    .button-more {
+    .nav-more__button {
         display: block;
     }
 }

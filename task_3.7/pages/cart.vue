@@ -1,10 +1,10 @@
 <template>
     <div v-if="cartStore.cards.length > 0" class="header">
-        <h2 class="_title">Shopping cart</h2>
+        <h2 class="_title-3">Shopping cart</h2>
         <div class="general-info">
-            <div>{{cartStore.cards.length}} items</div>
+            <div class="_muted-text-lg">{{cartStore.cards.length}} items</div>
             <div class="vertical-line"></div>
-            <div>${{cartStore.resultPrice}}</div>
+            <div class="_muted-text-lg">${{cartStore.resultPrice}}</div>
         </div>
     </div>
 
@@ -14,20 +14,19 @@
                 v-for="card in cartStore.cards"
                 :key="card.id"
                 :item="card"
-                :max-width="'300px'"
-                :max-height="'450px'"
+                max-width="300px"
+                max-height="450px"
             />
         </div>
 
         <div class="summary">
-            <h2 class="_title_2">Order summary</h2>
+            <h2 class="_title-4">Order summary</h2>
             <div class="summary-info__field">
                 <div>{{cartStore.cards.length}} items</div>
 
-                <div>
-                    <span class="cross-lined-price">${{cartStore.totalPrice}}</span>
-                    &nbsp;
-                    <span class="discounted-price">${{cartStore.totalPriceWithDiscount}}</span>
+                <div class="price-line">
+                    <span class="_muted-text-md _crossed-text">${{cartStore.totalPrice}}</span>
+                    <span>${{cartStore.totalPriceWithDiscount}}</span>
                 </div>
             </div>
 
@@ -41,12 +40,18 @@
                 <div>${{cartStore.resultPrice}}</div>
             </div>
 
-            <Button @click="checkout" class="checkout-button">Checkout</Button>
+            <Button
+                @click="checkout"
+            >
+                Checkout
+            </Button>
         </div>
     </div>
 
     <div v-else>
-        <h1 class="_title">There are no items in cart :(</h1>
+        <h1 class="_title-2">
+            There are no items in cart :(
+        </h1>
     </div>
 </template>
 

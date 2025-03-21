@@ -1,7 +1,7 @@
 <template>
     <div>
         <div @click="toggleState" class="drop-title">
-            <h2 class="_title_2">{{title}}</h2>
+            <h2 class="_title-4">{{title}}</h2>
             <Icon
                 class="arrow-icon"
                 :class="isExpanded ? 'arrow-icon-rotated' : ''"

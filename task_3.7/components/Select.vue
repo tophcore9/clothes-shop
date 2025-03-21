@@ -35,7 +35,7 @@ export default {
             default: 'Most relevant',
         },
         modelValue: {
-            type: [String, Number],
+            type: String,
             default: '',
         },
         searchable: {
@@ -100,7 +100,7 @@ export default {
     border: 1px solid #ccc;
     border-radius: 0.5rem;
     background-color: #fff;
-    z-index: 1000;
+    z-index: 1;
     max-height: 150px;
     overflow-y: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

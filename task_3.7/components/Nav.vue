@@ -73,8 +73,8 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import Icon from '../Icon.vue';
-import Button from '../Button.vue';
+import Icon from './Icon.vue';
+import Button from './Button.vue';
 import MobileMenu from "~/components/MobileMenu.vue";
 
 export default defineComponent({

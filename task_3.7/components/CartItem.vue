@@ -47,8 +47,8 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import type {ICardInCart} from "~/stores/cartStore";
-import Button from '../Button.vue';
-import Modal from '../Modals/Modal.vue';
+import Button from './Button.vue';
+import Modal from './Modal.vue';
 import {useDebugStore} from "~/stores/debugStore";
 
 export default defineComponent({

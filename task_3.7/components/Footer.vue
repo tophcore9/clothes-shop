@@ -57,7 +57,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import Icon from '../Icon.vue';
+import Icon from './Icon.vue';
 
 export default defineComponent({
     name: "Footer",

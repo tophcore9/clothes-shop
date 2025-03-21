@@ -53,9 +53,9 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import {useCartStore} from "~/stores/cartStore";
-import CartItem from "~/components/Cards/CartItem.vue";
+import CartItem from "~/components/CartItem.vue";
 import Button from '../components/Button.vue';
-import Alert from "~/components/Modals/Alert.vue";
+import Alert from "~/components/Alert.vue";
 import {useDebugStore} from "~/stores/debugStore";
 
 export default defineComponent({

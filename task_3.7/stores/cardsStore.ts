@@ -15,7 +15,9 @@ export interface ICard {
 interface ICardStore {
     cards: ICard[];
     filteredCards: ICard[];
-    currentCategory: string;
+    currentCategoryFilter: string;
+    maxPriceValueFilter: number,
+    minPriceValueFilter: number,
 }
 
 export const useCardsStore = defineStore("cards", {
@@ -23,7 +25,9 @@ export const useCardsStore = defineStore("cards", {
         return <ICardStore> {
             cards: [],
             filteredCards: [],
-            currentCategory: 'All categories',
+            currentCategoryFilter: 'All categories',
+            maxPriceValueFilter: 0,
+            minPriceValueFilter: 0,
         }
     },
     actions: {
@@ -54,24 +58,32 @@ export const useCardsStore = defineStore("cards", {
                 this.filteredCards = this.cards.filter(card => card.category === category);
             }
 
-            this.currentCategory = category;
+            this.currentCategoryFilter = category;
 
             return this.filteredCards;
         },
         filterByTitle(title: string): ICard[] {
             this.filteredCards = this.cards.filter(card => card.title.toLowerCase().includes(title.toLowerCase()));
-            this.currentCategory = title;
+            this.currentCategoryFilter = title;
 
             return this.filteredCards;
-        }
+        },
+        setMinPriceValueFilter(value: number) {
+            this.minPriceValueFilter = value;
+        },
+        setMaxPriceValueFilter(value: number) {
+            this.maxPriceValueFilter = value;
+        },
     },
     getters: {
         minPrice(): number {
             const minPrice = this.cards.reduce((minPrice, currentPrice) => currentPrice.price < minPrice.price ? currentPrice : minPrice);
+            this.minPriceValueFilter = minPrice.price;
             return minPrice.price;
         },
         maxPrice(): number {
             const maxPrice = this.cards.reduce((maxPrice, currentPrice) => currentPrice.price > maxPrice.price ? currentPrice : maxPrice);
+            this.maxPriceValueFilter = maxPrice.price;
             return maxPrice.price;
         },
     }

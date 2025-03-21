@@ -31,10 +31,10 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import Nav from '../components/Layout/Nav.vue';
-import Footer from '../components/Layout/Footer.vue';
-import Alert from "~/components/Modals/Alert.vue";
-import Modal from "~/components/Modals/Modal.vue";
+import Nav from '../components/Nav.vue';
+import Footer from '../components/Footer.vue';
+import Alert from "~/components/Alert.vue";
+import Modal from "~/components/Modal.vue";
 import {useDebugStore} from "~/stores/debugStore";
 
 export default defineComponent({

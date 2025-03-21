@@ -138,7 +138,7 @@
 import {defineComponent} from 'vue';
 import {useCardsStore} from "~/stores/cardsStore";
 import Button from '../components/Button.vue';
-import Card from '../components/Cards/Card.vue';
+import Card from '../components/Card.vue';
 import ReviewItem from '../components/ReviewItem.vue';
 
 export default defineComponent({

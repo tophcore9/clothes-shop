@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import Button from '../Button.vue';
+import Button from './Button.vue';
 
 export default defineComponent({
     name: "Modal",

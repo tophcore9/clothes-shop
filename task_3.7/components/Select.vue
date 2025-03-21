@@ -1,53 +1,129 @@
 <template>
-    <div @click. class="select" :style="{width: width}">
-        <div @click="toggleState" class="select-title" tabindex="-1">
-            <div>{{title}}</div>
-            <Icon icon-url="/assets/images/select-arrow-down.svg" icon-width="1rem" icon-height="1rem"/>
+    <div class="custom-select" :class="{ 'is-open': isOpen }">
+        <div class="selected-option" @click="toggleDropdown">
+            {{ selectedOption || placeholder }}
+            <span class="arrow">{{ isOpen ? '▲' : '▼' }}</span>
         </div>
-
-        <ul v-if="isExpanded" class="select-menu">
-            <li class="select-item" v-for="item in items">{{item}}</li>
-        </ul>
+        <div v-if="isOpen" class="dropdown">
+            <input
+                v-if="searchable"
+                v-model="searchQuery"
+                type="text"
+                placeholder="Search..."
+                class="search-input"
+            />
+            <div
+                v-for="option in options"
+                class="dropdown-item"
+                @click="selectOption(option)"
+            >
+                {{ option }}
+            </div>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
-import Icon from './Icon.vue';
-
-export default defineComponent({
-    name: "Select",
-    components: {
-        Icon
+export default {
+    props: {
+        options: {
+            type: Array<String>,
+            required: true,
+        },
+        placeholder: {
+            type: String,
+            default: 'Most relevant',
+        },
+        modelValue: {
+            type: [String, Number],
+            default: '',
+        },
+        searchable: {
+            type: Boolean,
+            default: false,
+        },
     },
+    emits: ['update:modelValue'],
     data() {
         return {
-            isExpanded: false
-        }
-    },
-    props: {
-        title: {
-            type: String,
-            required: true
-        },
-        items: {
-            type: Array,
-            required: true
-        },
-        width: {
-            type: String,
-            required: false,
-            default: 'auto'
-        }
+            isOpen: false,
+            selectedOption: '',
+            searchQuery: '',
+        };
     },
     methods: {
-        toggleState() {
-            this.isExpanded = !this.isExpanded;
-        }
-    }
-})
+        toggleDropdown() {
+            this.isOpen = !this.isOpen;
+        },
+        selectOption(option) {
+            this.selectedOption = option;
+            this.$emit('update:modelValue', option);
+            this.isOpen = false;
+        },
+    },
+};
 </script>
 
 <style scoped>
-@import "/assets/css/components/select.scss";
+.custom-select {
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+.selected-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: #fff;
+
+    font-weight: 700;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.selected-option:hover {
+    border-color: #888;
+}
+
+.arrow {
+    font-size: 12px;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    z-index: 1000;
+    max-height: 150px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.is-open .selected-option {
+    border-color: #888;
+}
 </style>

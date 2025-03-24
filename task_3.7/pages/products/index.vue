@@ -4,13 +4,13 @@
             <div class="filters">
                 <div class="filter-mobile-controls">
                     <Button
-                        v-if="isFiltersMobile"
+                        :class="isFiltersMobile ? 'show-in-mobile-mode' : ''"
                         background-color="transparent"
                         @click="clearFilters"
                     >Clear</Button>
                     <h2 class="_title-3">Filters:</h2>
                     <Button
-                        v-if="isFiltersMobile"
+                        :class="isFiltersMobile ? 'show-in-mobile-mode' : ''"
                         background-color="transparent"
                         @click="confirmFilters"
                     >Done</Button>
@@ -21,7 +21,7 @@
                         class="category"
                         :class="cardsStore.currentCategoryFilter === category ? 'active-category' : ''"
                         v-for="category in cardsStore.getAllCategories()"
-                        @click="cardsStore.filterByCategory(category)"
+                        @click="cardsStore.currentCategoryFilter = category"
                     >
                         {{category}}
                     </div>
@@ -33,18 +33,18 @@
                             <input
                                 v-model="cardsStore.minPriceValueFilter"
                                 class="price-input"
-                                type="text"
+                                type="number"
                             >
                             <div class="horizontal-line"></div>
                             <input
                                 v-model="cardsStore.maxPriceValueFilter"
                                 class="price-input"
-                                type="text"
+                                type="number"
                             >
                         </div>
                         <DoubleRange
-                            :min="cardsStore.minPrice"
-                            :max="cardsStore.maxPrice"
+                            :min="cardsStore.minPrice()"
+                            :max="cardsStore.maxPrice()"
                             v-model:min-value="cardsStore.minPriceValueFilter"
                             v-model:max-value="cardsStore.maxPriceValueFilter"
                         />
@@ -65,13 +65,13 @@
                 <Select
                     placeholder="Most relevant"
                     :options="[
-                    'Most relevant',
-                    'Newest',
-                    'Cheapest',
-                    'Most expensive',
-                    'Discount value',
+                        {label: 'Most relevant', value: ESortType.MostRelevant},
+                        {label: 'Newest', value: ESortType.Newest},
+                        {label: 'Cheapest', value: ESortType.Cheapest},
+                        {label: 'Most expensive', value: ESortType.MostExpensive},
+                        {label: 'Discount value', value: ESortType.DiscountValue}
                     ]"
-                    :model-value="cardsStore.sortType"
+                    v-model="cardsStore.sortType"
                 />
             </div>
             <div class="cards">
@@ -87,7 +87,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import {ESortType, useCardsStore} from "~/stores/cardsStore";
+import {useCardsStore} from "~/stores/cardsStore";
 import Card from "~/components/Card.vue";
 import DropDown from '~/components/DropDown.vue';
 import DoubleRange from '~/components/DoubleRange.vue';
@@ -105,7 +105,7 @@ export default defineComponent({
         return {
             cardsStore: useCardsStore(),
             isFiltersMobile: false,
-            isFiltersMobileFullScreen: true,
+            isFiltersMobileFullScreen: false,
         }
     },
     methods: {
@@ -115,7 +115,34 @@ export default defineComponent({
         },
         confirmFilters() {
             this.isFiltersMobile = false;
+        },
+        handleScreen() {
+            const currentState: boolean = window.innerWidth <= 700;
+
+            this.isFiltersMobile = !currentState;
+            this.isFiltersMobileFullScreen = currentState;
+        },
+    },
+    watch: {
+        "cardsStore.currentCategoryFilter"() {
+            this.cardsStore.updateFilters();
+        },
+        "cardsStore.minPriceValueFilter"() {
+            this.cardsStore.updateFilters();
+        },
+        "cardsStore.maxPriceValueFilter"() {
+            this.cardsStore.updateFilters();
+        },
+        "cardsStore.sortType"() {
+            this.cardsStore.updateFilters();
         }
+    },
+    mounted() {
+        this.handleScreen();
+        window.addEventListener("resize", this.handleScreen);
+    },
+    beforeUnmount() {
+        window.removeEventListener("resize", this.handleScreen);
     }
 })
 </script>

@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 
 export interface ICard {
-    id: string;
+    id: number;
     title: string;
     images: string[];
     price: number;
@@ -11,6 +11,14 @@ export interface ICard {
     category: string;
 }
 
+export enum ESortType {
+    MostRelevant,
+    Newest,
+    Cheapest,
+    MostExpensive,
+    DiscountValue,
+}
+
 interface ICardStore {
     cards: ICard[];
     filteredCards: ICard[];
@@ -18,14 +26,6 @@ interface ICardStore {
     maxPriceValueFilter: number,
     minPriceValueFilter: number,
     sortType: ESortType;
-}
-
-export enum ESortType {
-    MostRelevant,
-    Newest,
-    Cheapest,
-    MostExpensive,
-    DiscountValue
 }
 
 export const useCardsStore = defineStore("cards", {
@@ -40,14 +40,15 @@ export const useCardsStore = defineStore("cards", {
         }
     },
     actions: {
-        getCardById(id: string): ICard {
+        getCardById(id: number): ICard {
             const index = this.cards.findIndex(card => card.id === id);
+            console.log(index);
 
             if (index >= 0) {
                 return this.cards[index];
             }
 
-            return <ICard>{id: 'not found'};
+            return <ICard>{id: -1};
         },
         getAllCategories(): string[] {
             let categories: string[] = ['All categories'];
@@ -68,8 +69,6 @@ export const useCardsStore = defineStore("cards", {
             }
 
             this.currentCategoryFilter = category;
-            this.filterByPrice();
-            this.sortCards(this.sortType);
 
             return this.filteredCards;
         },
@@ -77,17 +76,14 @@ export const useCardsStore = defineStore("cards", {
             this.filteredCards = this.cards.filter(card => card.title.toLowerCase().includes(title.toLowerCase()));
             this.currentCategoryFilter = title;
 
-            this.filterByPrice();
-            this.sortCards(this.sortType);
-
             return this.filteredCards;
         },
         filterByPrice(): ICard[] {
-            this.filteredCards = this.filteredCards.filter((item) => item.price <= this.maxPriceValueFilter && item.price >= this.minPriceValueFilter);
+            this.filteredCards = this.filteredCards.filter((item) => this.discountedPrice(item) <= this.maxPriceValueFilter && this.discountedPrice(item) >= this.minPriceValueFilter);
 
             return this.filteredCards;
         },
-        sortCards(sortType: ESortType = this.sortType): ICard[] {
+        sortCards(sortType: ESortType): ICard[] {
             switch (sortType) {
                 case ESortType.MostRelevant: {
                     this.filteredCards.sort((a, b) => a.id - b.id);
@@ -114,24 +110,26 @@ export const useCardsStore = defineStore("cards", {
             return this.filteredCards;
         },
         clearFilters() {
-            this.maxPriceValueFilter = this.minPrice;
-            this.maxPriceValueFilter = this.maxPrice;
-
+            this.minPriceValueFilter = this.minPrice();
+            this.maxPriceValueFilter = this.maxPrice();
             this.filteredCards = this.cards;
-
             this.currentCategoryFilter = 'All categories';
-        }
-    },
-    getters: {
+        },
         minPrice(): number {
-            const minPrice = this.cards.reduce((minPrice, currentPrice) => currentPrice.price < minPrice.price ? currentPrice : minPrice);
-            this.minPriceValueFilter = minPrice.price;
-            return minPrice.price;
+            const minPrice = this.cards.reduce((minPrice, currentPrice) => this.discountedPrice(currentPrice) < this.discountedPrice(minPrice) ? currentPrice : minPrice);
+            return this.discountedPrice(minPrice);
         },
         maxPrice(): number {
-            const maxPrice = this.cards.reduce((maxPrice, currentPrice) => currentPrice.price > maxPrice.price ? currentPrice : maxPrice);
-            this.maxPriceValueFilter = maxPrice.price;
-            return maxPrice.price;
+            const maxPrice = this.cards.reduce((maxPrice, currentPrice) => this.discountedPrice(currentPrice) > this.discountedPrice(maxPrice) ? currentPrice : maxPrice);
+            return this.discountedPrice(maxPrice);
         },
-    }
+        discountedPrice(item: ICard): number {
+            return Number((item.price - item.price * item.discount / 100).toFixed(2));
+        },
+        updateFilters() {
+            this.filterByCategory(this.currentCategoryFilter);
+            this.filterByPrice();
+            this.sortCards(this.sortType);
+        }
+    },
 })

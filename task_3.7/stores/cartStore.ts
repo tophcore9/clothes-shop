@@ -29,10 +29,10 @@ export const useCartStore = defineStore("cart", {
                 this.cards.push({...item, count: 1});
             }
         },
-        removeItem(id: String) {
+        removeItem(id: number) {
             this.cards = this.cards.filter(card => card.id !== id);
         },
-        updateItem(id: String, changeType: EUpdateType, enteredCount: string = ''): boolean {
+        updateItem(id: number, changeType: EUpdateType, enteredCount: string = ''): boolean {
             const index = this.cards.findIndex(card => card.id === id);
             const card = this.cards[index];
 
@@ -57,7 +57,7 @@ export const useCartStore = defineStore("cart", {
 
             return false;
         },
-        isItemInCart(id: string): boolean {
+        isItemInCart(id: number): boolean {
             const index = this.cards.findIndex(card => card.id === id);
 
             return index >= 0;

@@ -19,11 +19,11 @@
                         width="40px"
                         picture-url="/assets/images/decrement.svg"
                     ></Button>
-                    <input @change="" class="count-input" type="text" :value="item.count">
+                    <input @change="" class="count-input" type="number" :value="item.count">
                     <Button
                         @click="cartStore.updateItem(item.id, EUpdateType.Increment)"
-                        :height="40"
-                        :width="40"
+                        height="40px"
+                        width="40px"
                         picture-url="/assets/images/increment.svg"
                     ></Button>
                 </div>

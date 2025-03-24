@@ -30,7 +30,7 @@ export default defineComponent({
         },
         zIndex: {
             type: Number,
-            default: 10
+            default: 4
         }
     }
 })

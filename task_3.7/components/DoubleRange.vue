@@ -9,6 +9,7 @@
             :max="max"
             v-model="currentMinValue"
             @input="updateMinValue"
+            :step="step"
             class="slider-thumb slider-thumb-min"
         />
         <input
@@ -17,6 +18,7 @@
             :max="max"
             v-model="currentMaxValue"
             @input="updateMaxValue"
+            :step="step"
             class="slider-thumb slider-thumb-max"
         />
     </div>
@@ -41,6 +43,10 @@ export default {
             type: Number,
             default: 80,
         },
+        step: {
+            type: Number,
+            default: 0.05,
+        }
     },
     data() {
         return {
@@ -60,12 +66,14 @@ export default {
         },
     },
     methods: {
-        updateMinValue(event) {
-            this.currentMinValue = Math.min(Number(event.target.value), this.currentMaxValue);
+        updateMinValue(event: Event) {
+            const target = <HTMLInputElement>event.target;
+            this.currentMinValue = Math.min(Number(target.value), this.currentMaxValue);
             this.$emit("update:minValue", this.currentMinValue);
         },
-        updateMaxValue(event) {
-            this.currentMaxValue = Math.max(Number(event.target.value), this.currentMinValue);
+        updateMaxValue(event: Event) {
+            const target = <HTMLInputElement>event.target;
+            this.currentMaxValue = Math.max(Number(target.value), this.currentMinValue);
             this.$emit("update:maxValue", this.currentMaxValue);
         },
     },

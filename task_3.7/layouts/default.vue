@@ -1,6 +1,9 @@
 <!--
-    MAKE A SELECT COMPONENT
-    MAKE A LAYOUT FOR THE HOME PAGE AND MAKE IT RESPONSIVE
+    FINISH A BANNER IN THE HOME PAGE
+    MAKE AN EDITABLE CART_ITEM COUNT
+    MAKE HORIZONTAL SCROLLING BY DRAGGING
+    REFACTOR EVERYTHING
+    HOST IN THE LAPTOP FOR FUN :)
 -->
 
 <template>
@@ -53,10 +56,12 @@ export default defineComponent({
         }
     },
     async mounted() {
+        this.reviewsStore.reviews = await $fetch("/api/reviews");
+
         this.cardsStore.cards = await $fetch("/api/cards");
         this.cardsStore.filteredCards = this.cardsStore.cards;
-        this.cardsStore.sortCards();
-        this.reviewsStore.reviews = await $fetch("/api/reviews");
+        this.cardsStore.minPriceValueFilter = this.cardsStore.minPrice();
+        this.cardsStore.maxPriceValueFilter = this.cardsStore.maxPrice();
     }
 })
 </script>

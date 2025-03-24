@@ -17,17 +17,24 @@
                 class="dropdown-item"
                 @click="selectOption(option)"
             >
-                {{ option }}
+                {{ option.label }}
             </div>
         </div>
     </div>
 </template>
 
 <script lang="ts">
+import type {ESortType} from "~/stores/cardsStore";
+
+interface Option {
+    label: string;
+    value: ESortType;
+}
+
 export default {
     props: {
         options: {
-            type: Array<String>,
+            type: Array<Option>,
             required: true,
         },
         placeholder: {
@@ -35,8 +42,8 @@ export default {
             default: 'Most relevant',
         },
         modelValue: {
-            type: String,
-            default: '',
+            type: Object as PropType<ESortType>,
+            required: true,
         },
         searchable: {
             type: Boolean,
@@ -55,9 +62,9 @@ export default {
         toggleDropdown() {
             this.isOpen = !this.isOpen;
         },
-        selectOption(option) {
-            this.selectedOption = option;
-            this.$emit('update:modelValue', option);
+        selectOption(option: Option) {
+            this.selectedOption = option.label;
+            this.$emit('update:modelValue', option.value);
             this.isOpen = false;
         },
     },

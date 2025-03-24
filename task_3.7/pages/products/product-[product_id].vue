@@ -124,8 +124,8 @@ export default defineComponent({
         const route = useRoute();
         const cardsStore = useCardsStore();
 
-        const productId = route.params.product_id as string;
-        this.item = cardsStore.getCardById(productId);
+        const productId = route.params.product_id;
+        this.item = cardsStore.getCardById(Number(productId));
     }
 })
 </script>

@@ -1,43 +1,57 @@
 <template>
     <div v-if="cardsStore.cards.length > 0" class="products">
-        <div class="filters">
-            <h2 class="_title-3">Filters:</h2>
-
-            <DropDown title="Category" class="categories" :is-opened="true">
-                <div
-                    class="category"
-                    :class="cardsStore.currentCategoryFilter === category ? 'active-category' : ''"
-                    v-for="category in cardsStore.getAllCategories()"
-                    @click="cardsStore.filterByCategory(category)"
-                >
-                    {{category}}
+        <MobileMenu :top="90" :z-index="4" :visible="isFiltersMobile" :full-screen="isFiltersMobileFullScreen">
+            <div class="filters">
+                <div class="filter-mobile-controls">
+                    <Button
+                        v-if="isFiltersMobile"
+                        background-color="transparent"
+                        @click="clearFilters"
+                    >Clear</Button>
+                    <h2 class="_title-3">Filters:</h2>
+                    <Button
+                        v-if="isFiltersMobile"
+                        background-color="transparent"
+                        @click="confirmFilters"
+                    >Done</Button>
                 </div>
-            </DropDown>
 
-            <DropDown title="Price" :is-opened="true">
-                <div class="price-block">
-                    <div class="price-inputs">
-                        <input
-                            v-model="cardsStore.minPriceValueFilter"
-                            class="price-input"
-                            type="text"
-                        >
-                        <div class="horizontal-line"></div>
-                        <input
-                            v-model="cardsStore.maxPriceValueFilter"
-                            class="price-input"
-                            type="text"
-                        >
+                <DropDown title="Category" class="categories" :is-opened="true">
+                    <div
+                        class="category"
+                        :class="cardsStore.currentCategoryFilter === category ? 'active-category' : ''"
+                        v-for="category in cardsStore.getAllCategories()"
+                        @click="cardsStore.filterByCategory(category)"
+                    >
+                        {{category}}
                     </div>
-                    <DoubleRange
-                        :min="cardsStore.minPrice"
-                        :max="cardsStore.maxPrice"
-                        v-model:min-value="cardsStore.minPriceValueFilter"
-                        v-model:max-value="cardsStore.maxPriceValueFilter"
-                    />
-                </div>
-            </DropDown>
-        </div>
+                </DropDown>
+
+                <DropDown title="Price" :is-opened="true">
+                    <div class="price-block">
+                        <div class="price-inputs">
+                            <input
+                                v-model="cardsStore.minPriceValueFilter"
+                                class="price-input"
+                                type="text"
+                            >
+                            <div class="horizontal-line"></div>
+                            <input
+                                v-model="cardsStore.maxPriceValueFilter"
+                                class="price-input"
+                                type="text"
+                            >
+                        </div>
+                        <DoubleRange
+                            :min="cardsStore.minPrice"
+                            :max="cardsStore.maxPrice"
+                            v-model:min-value="cardsStore.minPriceValueFilter"
+                            v-model:max-value="cardsStore.maxPriceValueFilter"
+                        />
+                    </div>
+                </DropDown>
+            </div>
+        </MobileMenu>
 
         <div class="content-wrapper">
             <div class="content">
@@ -45,14 +59,17 @@
                     <div class="_title-3">{{ cardsStore.currentCategoryFilter }}</div>
                     <div class="_muted-text-lg">{{cardsStore.filteredCards.length}} Results</div>
                 </div>
+                <Button class="show-in-mobile-mode" @click="isFiltersMobile = !isFiltersMobile">
+                    Filters
+                </Button>
                 <Select
                     placeholder="Most relevant"
                     :options="[
-                    'Most relevant' as ESortType.MostRelevant,
-                    'Newest' as ESortType.Newest,
-                    'Cheapest' as ESortType.Cheapest,
-                    'Most expensive' as ESortType.MostExpensive,
-                    'Discount value' as ESortType.DiscountValue,
+                    'Most relevant',
+                    'Newest',
+                    'Cheapest',
+                    'Most expensive',
+                    'Discount value',
                     ]"
                     :model-value="cardsStore.sortType"
                 />
@@ -62,7 +79,6 @@
                     v-for="card in cardsStore.filteredCards"
                     :key="card.id"
                     :card-item="card"
-                    min-height="350px"
                 />
             </div>
         </div>
@@ -79,11 +95,6 @@ import Select from '~/components/Select.vue';
 
 export default defineComponent({
     name: "index",
-    computed: {
-        ESortType() {
-            return ESortType
-        }
-    },
     components: {
         Card,
         DropDown,
@@ -93,36 +104,22 @@ export default defineComponent({
     data() {
         return {
             cardsStore: useCardsStore(),
+            isFiltersMobile: false,
+            isFiltersMobileFullScreen: true,
         }
     },
+    methods: {
+        clearFilters() {
+            this.cardsStore.clearFilters();
+            this.isFiltersMobile = false;
+        },
+        confirmFilters() {
+            this.isFiltersMobile = false;
+        }
+    }
 })
 </script>
 
-<style scoped>
-@import "/assets/css/pages/products.scss";
-
-.price-block {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-.price-inputs {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-.price-input {
-    width: 100%;
-    padding: 0 0.5rem;
-    height: 40px;
-    border: 1px solid var(--border-color);
-    border-radius: 0.5rem;
-}
-.horizontal-line {
-    min-width: 2rem;
-    height: 1px;
-    background-color: var(--border-color);
-}
+<style lang="scss" scoped>
+@use "/assets/css/pages/products";
 </style>

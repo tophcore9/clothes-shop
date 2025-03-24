@@ -60,12 +60,12 @@ export default defineComponent({
         maxHeight: {
             type: String,
             required: false,
-            default: '450px'
+            default: '100%'
         },
         minHeight: {
             type: String,
             required: false,
-            default: 'auto'
+            default: 'fit-content'
         },
         minWidth: {
             type: String,

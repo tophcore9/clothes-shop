@@ -55,6 +55,7 @@ export default defineComponent({
     async mounted() {
         this.cardsStore.cards = await $fetch("/api/cards");
         this.cardsStore.filteredCards = this.cardsStore.cards;
+        this.cardsStore.sortCards();
         this.reviewsStore.reviews = await $fetch("/api/reviews");
     }
 })

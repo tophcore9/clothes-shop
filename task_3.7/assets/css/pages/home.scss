@@ -2,12 +2,17 @@
 
 .banner {
   margin-bottom: 100px;
-  padding: 48px;
+  padding: 3rem;
   width: 100%;
 
   border-radius: 24px;
   background-color: var(--secondary-color);
   overflow: hidden;
+}
+@media (max-width: variables.$breakpoint-lg) {
+  .banner {
+    padding: 1rem;
+  }
 }
 
 .main-banner {
@@ -18,16 +23,58 @@
 }
 
 .best-selling {
+  margin-bottom: 100px;
+
   display: flex;
   justify-content: space-between;
+  gap: 3rem;
+}
+@media (max-width: variables.$breakpoint-lg) {
+  .best-selling {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
 }
 
 .best-selling-cards {
-  height: 300px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 3rem;
+}
+@media (max-width: variables.$breakpoint-lg) {
+  .best-selling-cards {
+    flex-direction: column;
+  }
+  .best-selling-card {
+    display: none;
+  }
+}
+
+.best-selling__block {
+  max-width: 250px;
 
   display: flex;
-  flex-flow: row wrap;
-  gap: 46px;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+@media (max-width: variables.$breakpoint-lg) {
+  .best-selling__block {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+
+    Button {
+      width: 200px !important;
+    }
+  }
+}
+@media (max-width: variables.$breakpoint-sm) {
+  .best-selling__block {
+    align-items: flex-start;
+    text-align: start;
+  }
 }
 
 .main-content, .main-info {
@@ -117,18 +164,6 @@
   left: -4rem;
 }
 
-.best-selling {
-  margin-bottom: 150px;
-}
-
-.best-selling__block {
-  max-width: 250px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
 .about-us {
   margin-bottom: 150px;
 
@@ -149,8 +184,15 @@
   display: flex;
   gap: 1.5rem;
 }
+@media (max-width: variables.$breakpoint-lg) {
+  .about-us__features {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 .about-us__feature {
+  max-width: 450px;
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
@@ -199,6 +241,11 @@
   flex-direction: column;
   justify-content: space-between;
 }
+@media (max-width: variables.$breakpoint-lg) {
+  .categories-banner {
+    height: 450px;
+  }
+}
 
 .reviews-block {
   display: flex;
@@ -211,6 +258,11 @@
   overflow-x: scroll;
   scroll-behavior: smooth;
   font-weight: 500;
+}
+@media (max-width: variables.$breakpoint-lg) {
+  .reviews {
+    gap: 1rem;
+  }
 }
 
 .categories-bottom {
@@ -234,6 +286,15 @@
   justify-content: space-between;
   gap: 40px;
 }
+@media (max-width: variables.$breakpoint-lg) {
+  .categories {
+    justify-content: flex-start;
+    gap: 1rem;
+
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+  }
+}
 
 .category-item {
   display: flex;
@@ -243,6 +304,16 @@
 
   &:nth-child(2) {
     transform: translateY(6rem);
+  }
+}
+@media (max-width: variables.$breakpoint-lg) {
+  .category-item {
+    min-width: 175px;
+    min-height: 250px;
+
+    &:nth-child(2) {
+      transform: none;
+    }
   }
 }
 

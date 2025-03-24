@@ -87,7 +87,7 @@ export const useCardsStore = defineStore("cards", {
 
             return this.filteredCards;
         },
-        sortCards(sortType: ESortType): ICard[] {
+        sortCards(sortType: ESortType = this.sortType): ICard[] {
             switch (sortType) {
                 case ESortType.MostRelevant: {
                     this.filteredCards.sort((a, b) => a.id - b.id);
@@ -112,6 +112,14 @@ export const useCardsStore = defineStore("cards", {
             }
 
             return this.filteredCards;
+        },
+        clearFilters() {
+            this.maxPriceValueFilter = this.minPrice;
+            this.maxPriceValueFilter = this.maxPrice;
+
+            this.filteredCards = this.cards;
+
+            this.currentCategoryFilter = 'All categories';
         }
     },
     getters: {

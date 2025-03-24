@@ -54,11 +54,12 @@
         </div>
         <div v-if="cardsStore.cards.length > 0" class="best-selling-cards">
             <Card
+                class="best-selling-card"
                 v-for="card in cardsStore.cards.slice(0, 3)"
                 :key="card.id"
                 :card-item="card"
                 max-width="300px"
-                min-height="350px"
+                min-height="fit-content"
             />
         </div>
     </section>

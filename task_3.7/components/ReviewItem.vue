@@ -37,51 +37,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-@import "/assets/css/variables.scss";
-
-.review {
-    padding: 3rem 3rem 0 3rem;
-
-    height: 330px;
-    min-width: 800px;
-
-    display: flex;
-    flex-direction: column;
-
-    background-color: var(--secondary-color);
-    border-radius: var(--border-radius);
-}
-.grade-block {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-.user {
-    display: flex;
-    align-items: center;
-}
-.user-block {
-    height: 100%;
-
-    display: flex;
-    justify-content: space-between;
-}
-.user-info {
-    display: flex;
-    flex-direction: column;
-}
-.user-name {
-    font-weight: 700;
-}
-.user-position {
-    font-size: 12px;
-    color: var(--muted-text);
-}
-.user-picture {
-    align-self: flex-end;
-}
-.grade {
-    font-weight: 700;
-}
+<style lang="scss" scoped>
+@use "/assets/css/components/review_item";
 </style>

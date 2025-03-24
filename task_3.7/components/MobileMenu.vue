@@ -1,6 +1,6 @@
 <template>
     <transition name="slide">
-        <div v-if="visible" class="menu" :style="{top: top + 'px', backgroundColor: backgroundColor}">
+        <div v-if="visible" :class="fullScreen ? 'menu' : ''" :style="{top: top + 'px', backgroundColor: backgroundColor, zIndex: zIndex}">
             <slot></slot>
         </div>
     </transition>
@@ -23,6 +23,14 @@ export default defineComponent({
         visible: {
             type: Boolean,
             default: false
+        },
+        fullScreen: {
+            type: Boolean,
+            default: true
+        },
+        zIndex: {
+            type: Number,
+            default: 10
         }
     }
 })
@@ -42,7 +50,7 @@ export default defineComponent({
     flex-direction: column;
     gap: 2rem;
 
-    width: 100vh;
+    width: 100%;
     height: calc(100vh - 90px);
 }
 

@@ -1,6 +1,10 @@
 <template>
     <div v-if="cardsStore.cards.length > 0" class="products">
-        <MobileMenu :top="90" :z-index="4" :visible="isFiltersMobile" :full-screen="isFiltersMobileFullScreen">
+        <MobileMenu
+            top="90px"
+            :visible="isFiltersMobile"
+            :full-screen="isFiltersMobileFullScreen"
+        >
             <div class="filters">
                 <div class="filter-mobile-controls">
                     <Button
@@ -148,5 +152,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@use "/assets/css/pages/products";
+@use '/assets/css/pages/products';
 </style>

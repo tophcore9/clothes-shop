@@ -1,10 +1,3 @@
-<!--
-    MAKE AN EDITABLE CART_ITEM COUNT
-    MAKE HORIZONTAL SCROLLING BY DRAGGING
-    REFACTOR EVERYTHING
-    HOST ON THE LAPTOP FOR FUN :)
--->
-
 <template>
     <div class="_container">
         <Nav></Nav>
@@ -65,8 +58,8 @@ export default defineComponent({
 })
 </script>
 
-<style>
-@import "/assets/css/reset.scss";
-@import "/assets/css/fonts.scss";
-@import "/assets/css/main.scss";
+<style  lang="scss">
+@use 'assets/css/reset';
+@use '/assets/css/fonts';
+@use '/assets/css/main';
 </style>

@@ -130,6 +130,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-@import "/assets/css/pages/product.scss";
+<style lang="scss" scoped>
+@use '/assets/css/pages/product';
 </style>

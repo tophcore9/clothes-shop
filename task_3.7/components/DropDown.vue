@@ -49,6 +49,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-@import "/assets/css/components/drop_down.scss";
+<style lang="scss" scoped>
+@use '/assets/css/components/drop_down';
 </style>

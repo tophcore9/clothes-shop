@@ -4,21 +4,21 @@
             <div class="footer-content">
                 <div class="footer-content__left">
                     <div class="footer-content__left-top">
-                        <Icon icon-url="/assets/images/logo-light.png" :icon-width="'138px'" :icon-height="'24px'"/>
+                        <Icon icon-url="/assets/images/logo-light.png" icon-width="138px" icon-height="24px"/>
 
                         <div>We help you find your dream products</div>
 
                         <div class="site-links">
                             <div class="site-link">
-                                <Icon icon-url="/assets/images/facebook-logo.svg" :icon-width="'20px'" :icon-height="'20px'"/>
+                                <Icon icon-url="/assets/images/facebook-logo.svg" icon-width="20px" icon-height="20px"/>
                             </div>
 
                             <div class="site-link">
-                                <Icon icon-url="/assets/images/instagram-logo.svg" :icon-width="'20px'" :icon-height="'20px'"/>
+                                <Icon icon-url="/assets/images/instagram-logo.svg" icon-width="20px" icon-height="20px"/>
                             </div>
 
                             <div class="site-link">
-                                <Icon icon-url="/assets/images/twitter-logo.svg" :icon-width="'20px'" :icon-height="'20px'"/>
+                                <Icon icon-url="/assets/images/twitter-logo.svg" icon-width="20px" icon-height="20px"/>
                             </div>
                         </div>
                     </div>
@@ -67,6 +67,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-@import "/assets/css/components/layout/footer.scss";
+<style lang="scss" scoped>
+@use '/assets/css/components/layout/footer';
 </style>

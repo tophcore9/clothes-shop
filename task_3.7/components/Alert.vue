@@ -49,6 +49,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-@import "/assets/css/components/modals/alert.scss";
+<style lang="scss" scoped>
+@use '/assets/css/components/modals/alert';
 </style>

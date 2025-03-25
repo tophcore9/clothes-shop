@@ -63,6 +63,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-@import "/assets/css/components/modals/modal.scss";
+<style lang="scss" scoped>
+@use '/assets/css/components/modals/modal';
 </style>

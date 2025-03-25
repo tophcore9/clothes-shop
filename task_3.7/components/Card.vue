@@ -5,7 +5,7 @@
         minWidth: minWidth,
         minHeight: minHeight}">
         <div class="card-image-block">
-            <img class="card-image" :src="cardItem.images[0]" alt="NO">
+            <img class="card-image" :src="cardItem.images[0]" alt="Image not found">
             <Button
                 class="add-to-cart__button"
                 height="3rem"
@@ -99,6 +99,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-@import "/assets/css/components/card.scss";
+<style lang="scss" scoped>
+@use '/assets/css/components/card';
 </style>

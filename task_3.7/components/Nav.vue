@@ -44,7 +44,7 @@
                     </Button>
                 </div>
             </div>
-            <MobileMenu :visible="isMenuOpened" :top="90">
+            <MobileMenu :visible="isMenuOpened" top="90px">
                 <NuxtLink
                     @click="isMenuOpened = false"
                     class="burger-menu-link"
@@ -121,6 +121,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-@import "/assets/css/components/layout/nav.scss";
+<style lang="scss" scoped>
+@use 'assets/css/components/layout/nav';
 </style>

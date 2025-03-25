@@ -28,7 +28,7 @@
                     ></Button>
                 </div>
                 <div>
-                    <span class="_highlighted-text">${{(item.price - item.price * item.discount / 100).toFixed(2)}}</span>
+                    <span class="_highlighted-text">${{useCardsStore().discountedPrice(item)}}</span>
                     &nbsp;
                     <span class="_muted-text-md _crossed-text">${{item.price}}</span>
                 </div>
@@ -50,6 +50,7 @@ import type {ICardInCart} from "~/stores/cartStore";
 import Button from './Button.vue';
 import Modal from './Modal.vue';
 import {useDebugStore} from "~/stores/debugStore";
+import {useCardsStore} from "~/stores/cardsStore";
 
 export default defineComponent({
     name: "CartItem",
@@ -70,6 +71,7 @@ export default defineComponent({
         }
     },
     methods: {
+        useCardsStore,
         decrementItem() {
             if (!this.cartStore.updateItem(this.item.id, EUpdateType.Decrement)) {
                 this.removeItem();
@@ -95,6 +97,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-@import "/assets/css/components/cart_item.scss";
+<style lang="scss" scoped>
+@use '/assets/css/components/cart_item';
 </style>

@@ -38,5 +38,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@use "/assets/css/components/review_item";
+@use '/assets/css/components/review_item';
 </style>

@@ -175,6 +175,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-@import "/assets/css/pages/home.scss";
+<style lang="scss" scoped>
+@use 'assets/css/pages/home';
 </style>

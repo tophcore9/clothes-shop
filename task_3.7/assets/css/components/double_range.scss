@@ -1,0 +1,64 @@
+@use '/assets/css/variables';
+
+.double-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0.5rem auto;
+}
+
+.slider-track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #ddd;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+.slider-range {
+  position: absolute;
+  height: 100%;
+  background-color: var(--text-color);
+  border-radius: 2px;
+}
+
+.slider-thumb {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 0;
+  pointer-events: none;
+  appearance: none;
+  background: none;
+  transform: translateY(-50%);
+}
+
+.slider-thumb::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: var(--text-color);
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.slider-thumb::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: var(--text-color);
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.slider-thumb-min {
+  z-index: 2;
+}
+
+.slider-thumb-max {
+  z-index: 1;
+}

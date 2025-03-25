@@ -2,9 +2,11 @@
     <button
         class="button"
         :class="{'button-highlighted': highlighted}"
-        :style="{height: height,
-        width: width,
-        backgroundColor: backgroundColor}"
+        :style="{
+            height: height,
+            width: width,
+            backgroundColor: backgroundColor
+        }"
     >
         <div class="button-inner">
             <slot></slot>
@@ -43,6 +45,6 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-@import "/assets/css/components/button.scss";
+<style lang="scss" scoped>
+@use '/assets/css/components/button';
 </style>

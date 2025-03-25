@@ -8,7 +8,6 @@ export interface ICardInCart extends ICard {
 export enum EUpdateType {
     Increment,
     Decrement,
-    CustomCount
 }
 
 interface ICartStore {
@@ -32,7 +31,7 @@ export const useCartStore = defineStore("cart", {
         removeItem(id: number) {
             this.cards = this.cards.filter(card => card.id !== id);
         },
-        updateItem(id: number, changeType: EUpdateType, enteredCount: string = ''): boolean {
+        updateItem(id: number, changeType: EUpdateType): boolean {
             const index = this.cards.findIndex(card => card.id === id);
             const card = this.cards[index];
 
@@ -43,11 +42,6 @@ export const useCartStore = defineStore("cart", {
                 } else if (changeType === EUpdateType.Decrement) {
                     if (card.count - 1 > 0) {
                         card.count--
-                        return true;
-                    }
-                } else if (changeType === EUpdateType.CustomCount) {
-                    if (Number(enteredCount)) {
-                        card.count = Number(enteredCount);
                         return true;
                     }
                 }

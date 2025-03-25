@@ -22,11 +22,18 @@
         <div class="summary">
             <h2 class="_title-4">Order summary</h2>
             <div class="summary-info__field">
-                <div>{{cartStore.cards.length}} items</div>
+                <div>
+                    {{cartStore.cards.length}} items
+                </div>
 
                 <div class="price-line">
-                    <span class="_muted-text-md _crossed-text">${{cartStore.totalPrice}}</span>
-                    <span>${{cartStore.totalPriceWithDiscount}}</span>
+                    <span class="_muted-text-md _crossed-text">
+                        ${{cartStore.totalPrice}}
+                    </span>
+
+                    <span>
+                        ${{cartStore.totalPriceWithDiscount}}
+                    </span>
                 </div>
             </div>
 

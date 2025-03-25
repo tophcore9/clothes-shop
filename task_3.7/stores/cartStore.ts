@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import type {ICard} from "./cardsStore";
+import {process} from "std-env";
 
 export interface ICardInCart extends ICard {
     count: number;
@@ -38,13 +39,12 @@ export const useCartStore = defineStore("cart", {
             if (index >= 0) {
                 if (changeType === EUpdateType.Increment) {
                     card.count++;
-                    return true;
                 } else if (changeType === EUpdateType.Decrement) {
                     if (card.count - 1 > 0) {
                         card.count--
-                        return true;
                     }
                 }
+                return true;
             } else {
                 console.error("Can't find the item with id " + id);
             }
@@ -58,7 +58,23 @@ export const useCartStore = defineStore("cart", {
         },
         clearCart() {
             this.cards = [];
-        }
+        },
+        saveCartToSessionStorage() {
+            if (process.client) {
+                sessionStorage.setItem('cartCards', JSON.stringify(this.cards));
+            }
+        },
+        loadCartFromSessionStorage() {
+            if (process.client) {
+                const savedCards = sessionStorage.getItem('cartCards');
+
+                if (savedCards) {
+                    this.cards = JSON.parse(savedCards);
+                }
+            }
+
+
+        },
     },
     getters: {
         totalPrice(): number {

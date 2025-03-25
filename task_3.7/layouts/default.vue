@@ -44,6 +44,7 @@ export default defineComponent({
         return {
             cardsStore: useCardsStore(),
             reviewsStore: useReviewsStore(),
+            cartStore: useCartStore(),
             debug: useDebugStore()
         }
     },
@@ -54,6 +55,11 @@ export default defineComponent({
         this.cardsStore.filteredCards = this.cardsStore.cards;
         this.cardsStore.minPriceValueFilter = this.cardsStore.minPrice();
         this.cardsStore.maxPriceValueFilter = this.cardsStore.maxPrice();
+
+        this.cartStore.loadCartFromSessionStorage();
+        this.cartStore.$subscribe(() => {
+            this.cartStore.saveCartToSessionStorage();
+        });
     }
 })
 </script>

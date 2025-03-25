@@ -13,7 +13,7 @@
                         <div class="statistics-value">50+</div>
                         <div class="statistics-title">Categories</div>
                     </div>
-                    <div></div>
+                    <div class="vertical-line"></div>
                     <div class="statistics-block">
                         <div class="statistics-value">100+</div>
                         <div class="statistics-title">Customers</div>
@@ -34,10 +34,7 @@
         </div>
 
         <div class="main-image__block">
-            <div class="main-image__circle"></div>
-            <img class="main-image" src="/assets/images/fox.png" alt="">
-            <img class="spinned-arrow-1" src="/assets/images/spinned-arrow-1.png" alt="">
-            <img class="spinned-arrow-2" src="/assets/images/spinned-arrow-2.png" alt="">
+            <div class="main-image"></div>
         </div>
     </header>
 

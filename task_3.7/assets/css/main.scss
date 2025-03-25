@@ -71,18 +71,23 @@ body, html, ._container {
 ._muted-text-md {font-size: 16px;}
 ._muted-text-sm {font-size: 14px;}
 
-._title-1,
-._title-2,
+._title-4,
 ._title-3,
-._title-4 {
+._title-2,
+._title-1 {
     font-weight: 700;
     color: var(--text-color);
 }
 
+._title-4 {font-size: 18px;}
+._title-3 {font-size: 1.5rem;}
+._title-2 {font-size: 2rem;}
 ._title-1 {
     font-size: 4rem;
     font-weight: 800;
 }
-._title-2 {font-size: 2rem;}
-._title-3 {font-size: 1.5rem;}
-._title-4 {font-size: 18px;}
+@media (max-width: variables.$breakpoint-lg) {
+    ._title-1 {
+        font-size: 3rem;
+    }
+}

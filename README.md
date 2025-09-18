@@ -6,6 +6,10 @@ This is a modern front-end layout for an online clothes shop. It's built with **
 
 ## 🚀 Getting Started
 
+### Preview
+
+https://github.com/user-attachments/assets/a78892c4-587c-410b-9391-7062eb611ac2
+
 ### Installation
 
 1.  **Clone the repository:**
